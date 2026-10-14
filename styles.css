@@ -132,6 +132,7 @@ strong { font-weight: 500; }
 /* Sections */
 .section { padding: 96px 0; }
 .section--tight { padding: 56px 0; }
+#kits { padding-bottom: 32px; }
 .section--sand { background: var(--surface-2); }
 .section__head { margin-bottom: 52px; max-width: 780px; }
 .section__head--row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; max-width: none; flex-wrap: wrap; }
@@ -156,11 +157,6 @@ strong { font-weight: 500; }
 .kit__link:hover { color: var(--muted); border-color: var(--muted); }
 .kit--custom .kit__media { display: grid; place-items: center; background: #E9E1D3; }
 .kit--custom .kit__media svg { width: 56px; height: 56px; color: var(--terracotta); }
-
-/* Brand band: one slim, soft line */
-.band { background: #E9E1D3; padding: 30px 16px; }
-.band__line { margin: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 32px; font-size: 13px; letter-spacing: .4em; text-transform: uppercase; }
-.band__line svg { width: 12px; height: 12px; color: var(--terracotta); flex-shrink: 0; }
 
 /* Filters */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -229,27 +225,25 @@ strong { font-weight: 500; }
 .pick[aria-pressed="true"] .pick__check { background: var(--dark); }
 .pick[aria-pressed="true"] .pick__check svg { opacity: 1; }
 
-/* Gift */
-.gift { background: var(--dark); color: var(--on-dark); padding: 112px 0; overflow: hidden; }
+/* Gift: light like the rest of the page */
+.gift { background: var(--surface-2); color: var(--dark); padding: 104px 0; overflow: hidden; }
 .gift__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .gift__card {
   position: relative; overflow: hidden;
-  aspect-ratio: 1.6; border-radius: 12px; padding: 34px;
-  background: var(--blush); color: var(--dark); transform: rotate(-3deg);
-  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .7);
+  aspect-ratio: 1.6; border-radius: 10px; padding: 34px;
+  background: #FBF8F3; color: var(--dark); transform: rotate(-2deg);
+  box-shadow: 0 30px 60px -36px rgba(42, 38, 36, .35), 0 0 0 1px rgba(42, 38, 36, .06);
   display: flex; flex-direction: column; justify-content: space-between;
 }
 .gift__card .logo { position: relative; }
 .gift__card .logo__sym { width: 30px; height: 30px; }
 .gift__card .logo__word { height: 13px; }
-.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--terracotta-soft); opacity: .5; }
-.gift__label { position: relative; letter-spacing: .3em; text-transform: uppercase; font-size: 11px; color: var(--dark); }
+.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--sand); opacity: .35; }
+.gift__label { position: relative; letter-spacing: .3em; text-transform: uppercase; font-size: 11px; color: var(--muted); }
 .gift__amount { position: absolute; right: 34px; bottom: 30px; font-size: 44px; font-weight: 300; color: var(--dark); }
-.gift__copy p:not(.eyebrow) { color: #CFC5BC; font-weight: 300; font-size: 17px; margin: 16px 0 28px; max-width: 28em; }
+.gift__copy p:not(.eyebrow) { color: var(--muted); font-weight: 300; font-size: 15px; margin: 16px 0 28px; max-width: 28em; }
 .gift__amounts { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
-.gift__amounts .chip { border-color: var(--grey); color: var(--on-dark); }
-.gift__amounts .chip:hover { background: rgba(255, 255, 255, .1); }
-.gift__amounts .chip[aria-checked="true"] { background: var(--on-dark); color: var(--dark); }
+.gift__amounts .chip[aria-checked="true"] { background: var(--dark); border-color: var(--dark); color: var(--on-dark); }
 
 /* Promises */
 .promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
@@ -340,7 +334,6 @@ strong { font-weight: 500; }
   .logo__word { height: 10px; }
   .kits, .grid { grid-template-columns: 1fr; }
   .builder__picks { grid-template-columns: repeat(2, 1fr); }
-  .band__line { gap: 10px 18px; font-size: 11px; letter-spacing: .3em; }
   .promises { grid-template-columns: 1fr; }
   .promises div { border-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
   .promises div:first-child { border-top: 0; }
