@@ -226,7 +226,7 @@ strong { font-weight: 500; }
 .pick[aria-pressed="true"] .pick__check svg { opacity: 1; }
 
 /* Gift: light like the rest of the page */
-.gift { background: var(--surface-2); color: var(--dark); padding: 104px 0; overflow: hidden; }
+.gift { background: var(--bg); border-top: 1px solid var(--line); color: var(--dark); padding: 104px 0; overflow: hidden; }
 .gift__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .gift__card {
   position: relative; overflow: hidden;
