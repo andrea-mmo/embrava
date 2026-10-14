@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0"><iframe id="f" src="index.html" style="width:1440px;height:1500px;border:0;display:block"></iframe>
+<script>
+const BASE=`
+:root{--bg:#F6F4F0;--surface:#F6F4F0;--surface-2:#EDEAE4}
+body{background:#F6F4F0}
+.announce{background:#1E1C1B;color:#EDEAE4;font-size:10px;letter-spacing:.24em}
+.header{background:rgba(246,244,240,.95)}.nav a{font-size:11px;letter-spacing:.22em}
+.rp-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin:0 0 14px;color:#6E6560}
+.rp-h1{font-size:30px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;margin:0;line-height:1.35;color:#2A2624}
+.rp-links a{font-size:11px;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px;margin-right:36px;color:#2A2624;white-space:nowrap}
+.section__head h2{font-size:22px!important;letter-spacing:.28em!important;text-transform:uppercase;font-weight:400!important}
+.section__sub{display:none}.section{padding:88px 0}
+.card{background:transparent;padding:0;border-radius:0}.card__media{border-radius:0}
+.card h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.card__price{font-size:12px;letter-spacing:.1em;font-weight:400}.card__color{font-size:11px}
+.grid{gap:14px 10px}.chip{border-radius:0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-width:1px}.add-btn{border-radius:0}`;
+const V={
+1:{css:`.rp1 .img{height:600px;overflow:hidden;background:#E8DFD0}.rp1 .img img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.rp1 .band{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding:44px 0 8px}`,
+hero:`<section class="rp1"><div class="img"><img src="assets/img/bag_sand.jpg" alt=""></div><div class="wrap band"><div><p class="rp-eyebrow">The essentials · Four colours</p><h1 class="rp-h1">Strength. Character. Movement.</h1></div><div class="rp-links"><a href="#shop">Shop the collection</a><a href="#kits">Shop kits</a></div></div></section>`},
+2:{css:`.rp2{display:grid;grid-template-columns:1fr 1.25fr;height:720px}
+.rp2 .copy{display:flex;flex-direction:column;justify-content:flex-end;padding:0 64px 72px max(16px,calc((100vw - 1200px)/2))}
+.rp2 .rp-h1{margin-bottom:32px}.rp2 .img{overflow:hidden;background:#E8DFD0}.rp2 .img img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}`,
+hero:`<section class="rp2"><div class="copy"><p class="rp-eyebrow">The essentials · Four colours</p><h1 class="rp-h1">Strength.<br>Character.<br>Movement.</h1><div class="rp-links"><a href="#shop">Shop the collection</a><a href="#kits">Shop kits</a></div></div><div class="img"><img src="assets/img/bag_sand.jpg" alt=""></div></section>`}
+};
+const k=new URLSearchParams(location.search).get('v'), v=V[k];
+f.onload=()=>{const d=f.contentDocument;const st=d.createElement('style');st.textContent=BASE+v.css;d.head.appendChild(st);d.querySelector('section.hero').outerHTML=v.hero;
+ d.querySelector('.rp'+k).after(d.querySelector('#shop'));};
+</script></body></html>
