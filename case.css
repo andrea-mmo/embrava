@@ -10,7 +10,7 @@
 .cs-intro { padding: 88px 0 40px; }
 .cs-intro h1 { font-size: clamp(44px, 7vw, 92px); margin-bottom: 28px; }
 .cs-intro__lead { font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 40em; margin: 0 0 48px; }
-.cs-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 0 0 64px; padding-top: 28px; border-top: 1px solid var(--line); }
+.cs-meta { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin: 0 0 64px; padding-top: 28px; border-top: 1px solid var(--line); }
 .cs-meta dt { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 6px; }
 .cs-meta dd { margin: 0; font-size: 15px; }
 
@@ -122,3 +122,9 @@
   .cs-scroll { height: 440px; border-width: 6px; }
   .cs-scroll:hover img, .cs-scroll:focus img { transform: translateY(calc(-100% + 428px)); }
 }
+
+.cs-meta a { text-decoration: none; border-bottom: 2px solid var(--terracotta); }
+.cs-credit { margin: 0; color: #cfc6bb; font-size: 15px; }
+.cs-credit a { color: var(--cream); text-decoration: none; border-bottom: 2px solid var(--terracotta); }
+@media (max-width: 1080px) { .cs-meta { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 860px) { .cs-meta { grid-template-columns: repeat(2, 1fr); } }

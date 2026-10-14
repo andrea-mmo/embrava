@@ -1,5 +1,7 @@
 # embrava · online store
 
+Designed and built by [Andrea Martinez Moreno](https://github.com/andrea-mmo).
+
 A concept e-commerce site for **embrava**, a training gear brand built on four colours and a wave-shaped *m*.
 
 **Live store:** https://andrea-mmo.github.io/embrava/
