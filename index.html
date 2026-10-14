@@ -104,12 +104,15 @@
 
   <!-- BUILD YOUR KIT -->
   <section class="section section--sand" id="build">
-    <div class="wrap builder">
-      <div class="builder__intro">
+    <div class="wrap">
+      <div class="section__head">
         <p class="eyebrow eyebrow--wave"><svg viewBox="0 0 164 164" aria-hidden="true"><use href="#symbol"/></svg>Build your kit</p>
-        <h2>Your combo,<br>your colours.</h2>
+        <h2>Your combo, your colours.</h2>
         <p class="section__sub">Pick 3 or more pieces and get 15% off the lot.</p>
-        <div class="builder__summary">
+      </div>
+      <div class="builder">
+        <div class="builder__picks" data-builder></div>
+        <aside class="builder__summary" aria-label="Your kit">
           <div class="builder__progress"><span data-builder-bar></span></div>
           <p data-builder-status>Pick 3 pieces to unlock your discount</p>
           <div class="builder__totals">
@@ -117,9 +120,8 @@
             <span class="price-big" data-builder-total>£0</span>
           </div>
           <button class="btn btn--dark btn--block" type="button" data-builder-add disabled>Add my kit</button>
-        </div>
+        </aside>
       </div>
-      <div class="builder__picks" data-builder></div>
     </div>
   </section>
 
