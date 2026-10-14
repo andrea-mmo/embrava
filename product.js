@@ -1,4 +1,4 @@
-/* embrava · product page (product.html?p=<id>&colour=<colour>) */
+/* Embrava · product page (product.html?p=<id>&colour=<colour>) */
 
 (() => {
   const params = new URLSearchParams(location.search);
@@ -13,7 +13,7 @@
         <p>It may have sold out or moved. Have a look at the rest of the range.</p>
         <a class="btn btn--dark" href="index.html#shop">Back to the shop</a>
       </div>`;
-    document.title = "Not found · embrava";
+    document.title = "Not found · Embrava";
     return;
   }
 
@@ -22,7 +22,7 @@
   let qty = 1;
 
   /* ---------- static content ---------- */
-  document.title = `${product.name} · embrava`;
+  document.title = `${product.name} · Embrava`;
   document.querySelector('meta[name="description"]').content = `${product.name}. ${product.lead}`;
   $("[data-crumb]").textContent = product.name;
   $("[data-name]").textContent = product.name;

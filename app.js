@@ -1,4 +1,4 @@
-/* embrava · shared: helpers, basket and home page.
+/* Embrava · shared: helpers, basket and home page.
    Catalogue data lives in data.js. */
 
 /* ---------- helpers ---------- */
@@ -260,7 +260,7 @@ document.addEventListener("click", (e) => {
     const { total } = builderTotals();
     const parts = [...picks].map(([id, c]) => `${PRODUCTS.find((p) => p.id === id).name} (${COLORS[c].label})`);
     const [firstId, firstC] = [...picks][0];
-    addToCart({ key: `custom-${[...picks].map(([i, c]) => i + c).join("-")}`, name: "My embrava kit",
+    addToCart({ key: `custom-${[...picks].map(([i, c]) => i + c).join("-")}`, name: "My Embrava kit",
       meta: parts.join(" · "), price: total, img: img(PRODUCTS.find((p) => p.id === firstId).variants[firstC]) });
     picks.clear(); renderBuilder();
   }
