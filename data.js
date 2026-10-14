@@ -18,7 +18,6 @@ const CATEGORIES = [
   { id: "all", label: "All" },
   { id: "bottles", label: "Bottles" },
   { id: "bags", label: "Bags" },
-  { id: "towels", label: "Towels" },
   { id: "apparel", label: "Apparel" },
 ];
 
@@ -35,16 +34,11 @@ const PRODUCTS = [
     lead: "Room for everything. Character on the outside.",
     description: "A roomy holdall for gym days, early starts and weekends away. Carry it by the handles or sling it over your shoulder, and let the logo do the talking.",
     details: ["Twin carry handles", "Detachable shoulder strap", "Front pocket", "Embrava logo on the front", "Available in Dark, Terracotta and Sand"] },
-  { id: "towel", name: "Gym towel", cat: "towels", price: 15,
-    variants: { dark: "towel_dark", terracotta: "towel_terracotta", sand: "towel_sand" },
-    lead: "The finishing touch to every session.",
-    description: "A soft gym towel finished with a contrast stripe and the Embrava logo at the hem. Sized to drape over a bench or fold into your bag.",
-    details: ["Contrast stripe at the hem", "Embrava logo at the hem", "Available in Dark, Terracotta and Sand"] },
   { id: "socks", name: "Socks", cat: "apparel", price: 9,
     variants: { dark: "socks_dark", sand: "socks_sand" },
     lead: "Small detail. Big statement.",
-    description: "Ribbed training socks with terracotta cuffs, heels and toes, and the em monogram at the top. One pair.",
-    details: ["Ribbed knit", "Contrast cuff, heel and toe", "em monogram on the cuff", "Available in Dark and Sand"] },
+    description: "Ribbed training socks with terracotta cuffs, heels and toes, and the Embrava symbol at the top. One pair.",
+    details: ["Ribbed knit", "Contrast cuff, heel and toe", "Embrava symbol on the cuff", "Available in Dark and Sand"] },
   { id: "tote", name: "Tote bag", cat: "bags", price: 14, tag: "New",
     variants: { cream: "tote_cream" },
     lead: "For the gym, the shop and everything in between.",
@@ -53,13 +47,13 @@ const PRODUCTS = [
   { id: "cap", name: "Cap", cat: "apparel", price: 20,
     variants: { sand: "cap_sand" },
     lead: "Keep your head in the game.",
-    description: "A classic six-panel cap in sand, with the em monogram on the front. Easy to wear in and out of training.",
-    details: ["Curved peak", "em monogram on the front", "Available in Sand"] },
+    description: "A classic six-panel cap in sand, with the Embrava symbol on the front. Easy to wear in and out of training.",
+    details: ["Curved peak", "Embrava symbol on the front", "Available in Sand"] },
 ];
 
 const KITS = [
   { id: "kit-gym", name: "Gym kit", theme: "dark", img: "kit_1.png", for: "For gym sessions",
-    items: ["Gym bag", "Insulated bottle", "Gym towel"], products: ["gym-bag", "bottle", "towel"], full: 82, price: 69 },
+    items: ["Gym bag", "Insulated bottle", "Socks"], products: ["gym-bag", "bottle", "socks"], full: 76, price: 63 },
   { id: "kit-home", name: "Home kit", theme: "terracotta", img: "kit_2.png", for: "For training at home",
     items: ["Yoga mat", "Jump rope", "Lifting straps"], products: [], full: 54, price: 45 },
   { id: "kit-starter", name: "Starter kit", theme: "sand", img: "kit_3.png", for: "Everything to get started",

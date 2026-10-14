@@ -2,7 +2,7 @@
 
 Designed and built by [Andrea Martinez Moreno](https://github.com/andrea-mmo).
 
-A concept e-commerce site for **Embrava**, a training gear brand built on four colours and a wave-shaped *m*.
+A concept e-commerce site for **Embrava**, a training gear brand built on a warm palette, a clean Jost Light wordmark and a sun-and-sea wave symbol.
 
 **Live store:** https://andrea-mmo.github.io/embrava/
 **Case study:** https://andrea-mmo.github.io/embrava/case-study.html
@@ -16,7 +16,7 @@ A concept e-commerce site for **Embrava**, a training gear brand built on four c
 - Product pages with a colour gallery, kit offer, details and related pieces
 - Persistent basket with quantity controls and a free delivery tracker
 - Responsive down to small phones, with a sticky add-to-basket bar on mobile
-- The original logo vectors are reused through one SVG sprite and never redrawn
+- The logo (symbol and outlined wordmark) lives in one SVG sprite; standalone files are in `assets/logo/`
 
 ## Built with
 
