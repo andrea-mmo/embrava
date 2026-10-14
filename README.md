@@ -39,4 +39,4 @@ python3 -m http.server 4321
 
 ## Note
 
-This is a concept project. Product images were generated with AI from the brand's own designs, prices are illustrative and checkout is disabled.
+This is a concept project. Product images are mockups, prices are illustrative and checkout is disabled.
