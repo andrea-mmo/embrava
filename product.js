@@ -18,7 +18,7 @@
   }
 
   const colours = Object.keys(product.variants);
-  let colour = colours.includes(params.get("colour")) ? params.get("colour") : colours[0];
+  let colour = colours.includes(params.get("colour")) ? params.get("colour") : firstColor(product);
   let qty = 1;
 
   /* ---------- static content ---------- */

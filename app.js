@@ -6,7 +6,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const money = (n) => `${CURRENCY}${Number.isInteger(n) ? n : n.toFixed(2)}`;
 const img = (file) => `assets/img/${file.includes(".") ? file : file + ".jpg"}`;
 const waveSvg = (cls = "") => `<svg class="${cls}" viewBox="0 0 164 164" aria-hidden="true"><use href="#symbol"/></svg>`;
-const firstColor = (p) => Object.keys(p.variants)[0];
+const firstColor = (p) => p.default || Object.keys(p.variants)[0];
 const productUrl = (id, colour) => `product.html?p=${id}${colour ? `&colour=${colour}` : ""}`;
 const findProduct = (id) => PRODUCTS.find((p) => p.id === id);
 const addProduct = (p, c, qty = 1) => addToCart({ key: `${p.id}-${c}`, name: p.name, meta: COLORS[c].label, price: p.price, img: img(p.variants[c]) }, qty);

@@ -24,17 +24,17 @@ const CATEGORIES = [
 /* `details` only lists what can be seen in the photos.
    Add materials, sizes and capacities once confirmed with your supplier. */
 const PRODUCTS = [
-  { id: "bottle", name: "Insulated bottle", cat: "bottles", price: 14, tag: "Bestseller",
+  { id: "bottle", name: "Insulated bottle", cat: "bottles", price: 14, tag: "Bestseller", default: "dark",
     variants: { dark: "bottle_dark", terracotta: "bottle_terracotta", sand: "bottle_sand" },
     lead: "Your training partner from first rep to last.",
     description: "A clean, solid bottle with the full Embrava logo running up the side. Easy to grab, easy to carry, and made to sit next to everything else in the range.",
     details: ["Full Embrava logo on the side", "Carry loop on the lid", "Available in Dark, Terracotta and Sand"] },
-  { id: "gym-bag", name: "Gym bag", cat: "bags", price: 35,
+  { id: "gym-bag", name: "Gym bag", cat: "bags", price: 35, default: "terracotta",
     variants: { dark: "bag_dark", terracotta: "bag_terracotta", sand: "bag_sand" },
     lead: "Room for everything. Character on the outside.",
     description: "A roomy holdall for gym days, early starts and weekends away. Carry it by the handles or sling it over your shoulder, and let the logo do the talking.",
     details: ["Twin carry handles", "Detachable shoulder strap", "Front pocket", "Embrava logo on the front", "Available in Dark, Terracotta and Sand"] },
-  { id: "socks", name: "Socks", cat: "apparel", price: 8,
+  { id: "socks", name: "Socks", cat: "apparel", price: 8, default: "sand",
     variants: { dark: "socks_dark", sand: "socks_sand" },
     lead: "Small detail. Big statement.",
     description: "Ribbed training socks with terracotta cuffs, heels and toes, and the Embrava symbol at the top. One pair.",
