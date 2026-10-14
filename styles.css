@@ -443,3 +443,9 @@ strong { font-weight: 500; }
 }
 @media (max-width: 860px) { body.has-sticky .toast { bottom: 96px; } }
 .footer__legal a { color: var(--grey); }
+
+/* Smaller, tighter titles on phones */
+@media (max-width: 560px) {
+  .hero h1, .section__head h2, .gift__copy h2, .pdp__info h1 { font-size: 17px; letter-spacing: .2em; line-height: 1.45; }
+  .hero h1 { margin-bottom: 24px; }
+}
