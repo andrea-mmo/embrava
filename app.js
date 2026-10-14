@@ -93,24 +93,27 @@ function openCart(open) {
 /* ---------- kits ---------- */
 function renderKits() {
   $("[data-kits]").innerHTML = KITS.map((k) => `
-    <article class="kit kit--${k.theme}">
-      <img class="kit__img" src="${img(k.img)}" alt="${k.name}: ${k.items.join(", ")}" loading="lazy">
+    <article class="kit">
+      <div class="kit__media">
+        <img src="${img(k.img)}" alt="${k.name}: ${k.items.join(", ")}" loading="lazy">
+        <span class="card__tag">Save ${Math.round((1 - k.price / k.full) * 100)}%</span>
+      </div>
       <div class="kit__body">
-        <span class="kit__badge">Save ${Math.round((1 - k.price / k.full) * 100)}%</span>
-        <h3>${k.name}</h3>
-        <p class="kit__for">${k.for}</p>
-        <ul class="kit__items">${k.items.map((i) => `<li>${i}</li>`).join("")}</ul>
-        <div class="kit__foot">
-          <div class="kit__price"><s>${money(k.full)}</s><strong>${money(k.price)}</strong></div>
-          <button class="btn" type="button" data-add-kit="${k.id}">Add</button>
+        <div class="card__top">
+          <h3>${k.name}</h3>
+          <span class="kit__price"><s>${money(k.full)}</s>${money(k.price)}</span>
         </div>
+        <p class="kit__items">${k.items.join(" · ")}</p>
+        <button class="kit__link" type="button" data-add-kit="${k.id}">Add kit</button>
       </div>
     </article>`).join("") + `
     <a class="kit kit--custom" href="#build">
-      ${waveSvg()}
-      <h3>Build your kit</h3>
-      <p>Pick 3 or more pieces in any colours you like and save 15%.</p>
-      <span class="link">Start building</span>
+      <div class="kit__media">${waveSvg()}</div>
+      <div class="kit__body">
+        <div class="card__top"><h3>Build your kit</h3></div>
+        <p class="kit__items">Pick 3 or more pieces in any colours and save 15%.</p>
+        <span class="kit__link">Start building</span>
+      </div>
     </a>`;
 }
 
