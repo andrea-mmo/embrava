@@ -16,6 +16,8 @@
   --surface-2: #EDEAE4;
   --on-dark: var(--cream);
   --grey: #B8ACA3;
+  --stone: #D8D3CB;
+  --stone-light: #EAE7E1;
   --radius: 0px;
   --font: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -146,8 +148,8 @@ strong { font-weight: 500; }
   transition: transform .3s;
 }
 .kit:hover { transform: translateY(-3px); }
-.kit--terracotta { --bg: var(--terracotta-soft); --fg: var(--dark); --accent: var(--dark); }
-.kit--sand { --bg: var(--blush); --fg: var(--dark); --accent: var(--terracotta); }
+.kit--terracotta { --bg: var(--stone); --fg: var(--dark); --accent: var(--dark); }
+.kit--sand { --bg: var(--stone-light); --fg: var(--dark); --accent: var(--dark); }
 .kit__img { border-radius: 0; aspect-ratio: 1; object-fit: cover; margin-bottom: 18px; }
 .kit__body { padding: 0 8px; display: flex; flex-direction: column; flex: 1; }
 .kit__badge { align-self: flex-start; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; border-radius: 0; border: 1px solid currentColor; opacity: .85; margin-bottom: 14px; }
@@ -174,9 +176,9 @@ strong { font-weight: 500; }
 /* Brand band */
 .band { display: grid; grid-template-columns: repeat(3, 1fr); }
 .band__item { padding: 64px 24px; text-align: center; font-size: clamp(16px, 2vw, 24px); font-weight: 300; letter-spacing: .4em; text-transform: uppercase; }
-.band__item--terracotta { background: var(--terracotta-soft); color: var(--dark); }
-.band__item--dark { background: var(--dark); color: var(--blush); }
-.band__item--sand { background: var(--blush); color: var(--dark); }
+.band__item--terracotta { background: var(--stone); color: var(--dark); }
+.band__item--dark { background: var(--dark); color: var(--stone-light); }
+.band__item--sand { background: var(--stone-light); color: var(--dark); }
 
 /* Filters */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -411,8 +413,8 @@ strong { font-weight: 500; }
   display: grid; grid-template-columns: 76px 1fr auto; gap: 16px; align-items: center;
   background: var(--bg); color: var(--fg); border-radius: var(--radius); padding: 12px 16px 12px 12px; margin-bottom: 28px;
 }
-.upsell--sand { --bg: var(--blush); --fg: var(--dark); }
-.upsell--terracotta { --bg: var(--terracotta-soft); --fg: var(--dark); }
+.upsell--sand { --bg: var(--stone-light); --fg: var(--dark); }
+.upsell--terracotta { --bg: var(--stone); --fg: var(--dark); }
 .upsell img { width: 76px; height: 76px; border-radius: 0; object-fit: cover; }
 .upsell p { margin: 0; }
 .upsell__eyebrow { font-weight: 500; font-size: 15px; }
