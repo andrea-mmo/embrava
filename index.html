@@ -93,16 +93,21 @@
         <p class="section__sub">Pick 3 or more pieces and get 15% off the lot.</p>
       </div>
       <div class="builder">
-        <div class="builder__picks" data-builder></div>
-        <aside class="builder__summary" aria-label="Your kit">
-          <div class="builder__progress"><span data-builder-bar></span></div>
-          <p data-builder-status>Pick 3 pieces to unlock your discount</p>
-          <div class="builder__totals">
-            <span class="price-old" data-builder-old></span>
-            <span class="price-big" data-builder-total>£0</span>
+        <div class="tray" aria-label="Your kit">
+          <ol class="tray__slots" data-builder-slots></ol>
+          <div class="tray__bar">
+            <div class="tray__status">
+              <div class="builder__progress"><span data-builder-bar></span></div>
+              <p data-builder-status role="status">Pick 3 pieces to unlock your discount</p>
+            </div>
+            <div class="builder__totals">
+              <span class="price-old" data-builder-old></span>
+              <span class="price-big" data-builder-total>£0</span>
+            </div>
+            <button class="btn btn--dark" type="button" data-builder-add disabled>Add my kit</button>
           </div>
-          <button class="btn btn--dark btn--block" type="button" data-builder-add disabled>Add my kit</button>
-        </aside>
+        </div>
+        <ul class="builder__picks" data-builder aria-label="Pieces"></ul>
       </div>
     </div>
   </section>

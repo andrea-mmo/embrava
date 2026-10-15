@@ -175,35 +175,72 @@ function setColor(id, color) {
 
 /* ---------- builder ---------- */
 const picks = new Map(); // id -> color
+let lastPicked = null; // animates only the piece just added to the tray
 
 function renderBuilder() {
+  // Keep keyboard focus after re-rendering (a removed slot hands it to that piece in the list)
+  const el = document.activeElement;
+  const refocus = el?.closest("[data-builder], [data-builder-slots]") && Object.entries(el.dataset).map(([k, v]) => `[data-${k.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase())}="${v}"]`).join("");
+
   $("[data-builder]").innerHTML = PRODUCTS.map((p) => {
+    const on = picks.has(p.id);
     const c = picks.get(p.id) || firstColor(p);
     return `
-    <div>
-      <button type="button" class="pick" data-pick="${p.id}" aria-pressed="${picks.has(p.id)}">
+    <li class="pick${on ? " is-on" : ""}">
+      <button type="button" class="pick__main" data-pick="${p.id}" aria-pressed="${on}">
         <img src="${img(p.variants[c])}" alt="" loading="lazy">
-        <span class="pick__check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span>
-        <span class="pick__name">${p.name}</span>
-        <span class="pick__price">${money(p.price)}</span>
+        <span class="pick__text">
+          <span class="pick__name">${p.name}</span>
+          <span class="pick__price">${money(p.price)}</span>
+        </span>
+        <span class="pick__check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span>
       </button>
-      ${Object.keys(p.variants).length > 1 ? `<div style="margin:10px 4px 0">${swatchesHtml(p, "data-pick-swatch")}</div>` : ""}
-    </div>`;
+      ${Object.keys(p.variants).length > 1 ? swatchesHtml(p, "data-pick-swatch") : ""}
+    </li>`;
   }).join("");
+
+  const slots = Math.max(BUILDER_MIN, picks.size + 1);
+  const filled = [...picks].map(([id, c]) => {
+    const p = findProduct(id);
+    return `
+    <li class="slot slot--on${id === lastPicked ? " is-new" : ""}">
+      <img src="${img(p.variants[c])}" alt="">
+      <span class="slot__name">${p.name}</span>
+      <span class="slot__meta">${COLORS[c].label} · ${money(p.price)}</span>
+      <button type="button" class="slot__remove" data-pick="${id}" aria-label="Remove ${p.name}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg>
+      </button>
+    </li>`;
+  });
+  const empty = Array.from({ length: slots - picks.size }, (_, i) => `
+    <li class="slot${picks.size + i >= BUILDER_MIN ? " slot--extra" : ""}" aria-hidden="true">
+      <span class="slot__plus">+</span>
+      <span class="slot__hint">${picks.size + i >= BUILDER_MIN ? "Add more" : `Piece ${picks.size + i + 1}`}</span>
+    </li>`);
+  $("[data-builder-slots]").innerHTML = filled.join("") + empty.join("");
+
   syncBuilderSwatches();
   updateBuilder();
+  if (refocus) $(`[data-builder] ${refocus}`)?.focus();
 }
 
 function syncBuilderSwatches() {
   document.querySelectorAll("[data-pick-swatch]").forEach((s) => {
     const id = s.dataset.pickSwatch;
-    const p = PRODUCTS.find((x) => x.id === id);
-    s.setAttribute("aria-checked", String((picks.get(id) || firstColor(p)) === s.dataset.color));
+    s.setAttribute("aria-checked", String((picks.get(id) || firstColor(findProduct(id))) === s.dataset.color));
   });
 }
 
+function togglePick(p, color) {
+  lastPicked = picks.has(p.id) ? null : p.id;
+  if (color) picks.set(p.id, color);
+  else if (picks.has(p.id)) picks.delete(p.id);
+  else picks.set(p.id, selected[p.id] || firstColor(p));
+  renderBuilder();
+}
+
 function builderTotals() {
-  const sum = [...picks.keys()].reduce((s, id) => s + PRODUCTS.find((p) => p.id === id).price, 0);
+  const sum = [...picks.keys()].reduce((s, id) => s + findProduct(id).price, 0);
   const active = picks.size >= BUILDER_MIN;
   return { sum, total: active ? Math.round(sum * (1 - BUILDER_DISCOUNT) * 100) / 100 : sum, active };
 }
@@ -213,7 +250,7 @@ function updateBuilder() {
   const n = picks.size;
   $("[data-builder-bar]").style.width = `${Math.min(100, (n / BUILDER_MIN) * 100)}%`;
   $("[data-builder-status]").textContent = active
-    ? `${n} pieces · 15% off applied`
+    ? `${n} pieces · ${BUILDER_DISCOUNT * 100}% off applied`
     : n === 0 ? `Pick ${BUILDER_MIN} pieces to unlock your discount`
     : `${BUILDER_MIN - n === 1 ? "1 more piece" : `${BUILDER_MIN - n} more pieces`} to unlock your discount`;
   $("[data-builder-old]").textContent = active ? money(sum) : "";
@@ -244,21 +281,8 @@ document.addEventListener("click", (e) => {
   else if (d.addKit) {
     addKit(KITS.find((x) => x.id === d.addKit));
   }
-  else if (d.pick) {
-    const p = PRODUCTS.find((x) => x.id === d.pick);
-    if (picks.has(p.id)) picks.delete(p.id); else picks.set(p.id, selected[p.id] || firstColor(p));
-    t.setAttribute("aria-pressed", String(picks.has(p.id)));
-    updateBuilder();
-  }
-  else if (d.pickSwatch) {
-    const p = PRODUCTS.find((x) => x.id === d.pickSwatch);
-    picks.set(p.id, d.color);
-    const btn = $(`[data-pick="${p.id}"]`);
-    btn.setAttribute("aria-pressed", "true");
-    $("img", btn).src = img(p.variants[d.color]);
-    syncBuilderSwatches();
-    updateBuilder();
-  }
+  else if (d.pick) togglePick(findProduct(d.pick));
+  else if (d.pickSwatch) togglePick(findProduct(d.pickSwatch), d.color);
   else if ("builderAdd" in d) {
     const { total } = builderTotals();
     const parts = [...picks].map(([id, c]) => `${PRODUCTS.find((p) => p.id === id).name} (${COLORS[c].label})`);
