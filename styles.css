@@ -24,6 +24,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+/* Nothing pans the page sideways; only the kits row scrolls (clip keeps the sticky header working) */
+html, body { overflow-x: clip; }
 body {
   margin: 0;
   font-family: var(--font);
@@ -583,7 +585,7 @@ strong { font-weight: 500; }
   .kits-band svg { width: 32px; height: 32px; }
 
   /* Shop: two products per row */
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 28px 10px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 10px; }
   .card__body { padding-top: 10px; gap: 6px; }
   .card__top { flex-direction: column; gap: 2px; }
   .card h3 { font-size: 11px; letter-spacing: .14em; line-height: 1.4; }
@@ -604,7 +606,10 @@ strong { font-weight: 500; }
   .tray__slots { margin-bottom: 18px; gap: 10px; }
   .tray__bar { padding-top: 16px; }
   .price-big { font-size: 28px; }
-  .builder__picks { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .builder__picks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .pick { min-width: 0; }
+  .pick__name { overflow-wrap: anywhere; }
+  .pick .swatches { flex-wrap: wrap; }
   .pick { padding: 8px; }
   .pick__main { gap: 8px; }
   .pick__main img { width: 40px; height: 40px; }
@@ -620,7 +625,7 @@ strong { font-weight: 500; }
   .story__inner { gap: 28px; }
   .story__sym { width: 88px; }
   .story h2 { margin-bottom: 20px; }
-  .story__copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+  .story__copy > p:not(.eyebrow):not(.story__tagline) { font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
   .story__copy > p.story__tagline { margin-top: 24px; padding-top: 18px; }
   .gift { padding: 56px 0; }
   .gift__inner { gap: 32px; }
