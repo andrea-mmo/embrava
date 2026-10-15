@@ -92,29 +92,29 @@ function openCart(open) {
 
 /* ---------- kits ---------- */
 function renderKits() {
-  $("[data-kits]").innerHTML = KITS.map((k) => `
+  $("[data-kits]").innerHTML = KITS.map((k) => {
+    const pieces = k.products.map((id) => PRODUCTS.find((p) => p.id === id));
+    return `
     <article class="kit">
       <div class="kit__media">
         <img src="${img(k.img)}" alt="${k.name}: ${k.items.join(", ")}" loading="lazy">
-        <span class="card__tag">Save ${Math.round((1 - k.price / k.full) * 100)}%</span>
+        <span class="kit__tag">Save ${Math.round((1 - k.price / k.full) * 100)}%</span>
+        ${k.items.map((name, i) => `<span class="kit__pin kit__pin--${i}" aria-hidden="true">${name}</span>`).join("")}
       </div>
       <div class="kit__body">
-        <div class="card__top">
-          <h3>${k.name}</h3>
-          <span class="kit__price"><s>${money(k.full)}</s>${money(k.price)}</span>
+        <p class="kit__for">${k.for}</p>
+        <h3>${k.name}</h3>
+        <ul class="kit__list">
+          ${pieces.map((p, i) => `<li><span>${k.items[i]}</span><span>${money(p.price)}</span></li>`).join("")}
+        </ul>
+        <div class="kit__total">
+          <span><s>${money(k.full)}</s><strong>${money(k.price)}</strong></span>
+          <span class="kit__save">You save ${money(Math.round((k.full - k.price) * 100) / 100)}</span>
         </div>
-        <p class="kit__items">${k.items.join(" · ")}</p>
-        <button class="kit__link" type="button" data-add-kit="${k.id}">Add kit</button>
+        <button class="btn btn--dark" type="button" data-add-kit="${k.id}">Add kit</button>
       </div>
-    </article>`).join("") + `
-    <a class="kit kit--custom" href="#build">
-      <div class="kit__media">${waveSvg()}</div>
-      <div class="kit__body">
-        <div class="card__top"><h3>Build your kit</h3></div>
-        <p class="kit__items">Pick 3 or more pieces in any colours and save 15%.</p>
-        <span class="kit__link">Start building</span>
-      </div>
-    </a>`;
+    </article>`;
+  }).join("");
 }
 
 /* ---------- catalogue ---------- */

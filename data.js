@@ -97,10 +97,10 @@ const PRODUCTS = [
 ];
 
 const KITS = [
-  { id: "kit-gym", name: "Gym kit", theme: "dark", img: "kit_gym.jpg", for: "For gym sessions",
+  { id: "kit-gym", name: "Gym kit", theme: "dark", img: "kit_gym.jpg", for: "For weights and the gym",
     items: ["Gym bag", "Shaker", "Lifting straps"], products: ["gym-bag", "shaker", "straps"], full: 55, price: 44 },
-  { id: "kit-home", name: "Home kit", theme: "terracotta", img: "kit_home.jpg", for: "For training at home",
+  { id: "kit-home", name: "Home kit", theme: "terracotta", img: "kit_home.jpg", for: "For mat work at home",
     items: ["Yoga mat", "Mini bands", "Socks"], products: ["mat", "bands", "socks"], full: 46, price: 36.8 },
-  { id: "kit-starter", name: "Starter kit", theme: "sand", img: "kit_starter.jpg", for: "Everything to get started",
+  { id: "kit-starter", name: "Starter kit", theme: "sand", img: "kit_starter.jpg", for: "Your first week",
     items: ["Tote bag", "Insulated bottle", "Scrunchie"], products: ["tote", "bottle", "scrunchie"], full: 31, price: 24.8 },
 ];
