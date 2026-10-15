@@ -98,7 +98,6 @@ function renderKits() {
     <article class="kit">
       <div class="kit__media">
         <img src="${img(k.img)}" alt="${k.name}: ${k.items.join(", ")}" loading="lazy">
-        <span class="kit__tag">Save ${Math.round((1 - k.price / k.full) * 100)}%</span>
         ${k.items.map((name, i) => `<span class="kit__pin kit__pin--${i}" aria-hidden="true">${name}</span>`).join("")}
       </div>
       <div class="kit__body">
@@ -108,7 +107,7 @@ function renderKits() {
           ${pieces.map((p, i) => `<li><span>${k.items[i]}</span><span>${money(p.price)}</span></li>`).join("")}
         </ul>
         <div class="kit__total">
-          <span><s>${money(k.full)}</s><strong>${money(k.price)}</strong></span>
+          <span><s>${money(k.full)}</s><strong>${money(k.price)}</strong><span class="kit__off">−${Math.round((1 - k.price / k.full) * 100)}%</span></span>
           <span class="kit__save">You save ${money(Math.round((k.full - k.price) * 100) / 100)}</span>
         </div>
         <button class="btn btn--dark" type="button" data-add-kit="${k.id}">Add kit</button>
