@@ -170,10 +170,6 @@ strong { font-weight: 500; }
 }
 .kit__total s { color: var(--muted); font-size: 14px; margin-right: 8px; }
 .kit__total strong { font-size: 22px; font-weight: 400; letter-spacing: .04em; }
-.kit__off {
-  display: inline-block; margin-left: 12px; padding: 4px 8px; vertical-align: 4px;
-  background: var(--terracotta); color: var(--cream); font-size: 10px; letter-spacing: .18em;
-}
 .kit__save { font-size: 12px; color: var(--terracotta); letter-spacing: .06em; white-space: nowrap; }
 .kit .btn { width: 100%; }
 
