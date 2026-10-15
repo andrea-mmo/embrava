@@ -24,7 +24,7 @@ Plain HTML, CSS and JavaScript. No framework, no build step.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage: hero, kits, shop, build your kit, gift card |
+| `index.html` | Homepage: hero, kits, shop, build your kit, our story, gift card |
 | `product.html` | Product page template (`product.html?p=bottle&colour=sand`) |
 | `case-study.html` | Design case study |
 | `data.js` | Catalogue: products, prices, kits and copy |
