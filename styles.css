@@ -255,17 +255,29 @@ strong { font-weight: 500; }
 .gift__card {
   position: relative; overflow: hidden;
   aspect-ratio: 1.6; border-radius: 10px; padding: 34px;
-  background: #E8DAC3; color: var(--dark); transform: rotate(-2deg);
+  background: var(--g-bg); color: var(--g-fg); transform: rotate(-2deg);
+  transition: background .35s, color .35s;
   box-shadow: 0 30px 60px -36px rgba(42, 38, 36, .35), 0 0 0 1px rgba(42, 38, 36, .06);
   display: flex; flex-direction: column; justify-content: space-between;
 }
-.gift__card .logo { position: relative; }
+.gift__card {
+  --g-bg: #E8DAC3; --g-fg: var(--dark); --g-wave: #DBC8A9; --g-label: #5F5650; --g-sym: var(--terracotta);
+}
+.gift__card[data-design="terracotta"] { --g-bg: var(--terracotta); --g-fg: var(--cream); --g-wave: #B95D3E; --g-label: #F2D9CB; --g-sym: var(--cream); }
+.gift__card[data-design="dark"] { --g-bg: var(--dark); --g-fg: var(--cream); --g-wave: #36302D; --g-label: var(--grey); --g-sym: var(--terracotta); }
+.gift__card[data-design="blush"] { --g-bg: var(--blush); --g-fg: var(--dark); --g-wave: #F3DDD0; --g-label: #8A5E4C; --g-sym: #fff; }
+.gift__card .logo { position: relative; color: var(--g-fg); transition: color .35s; }
+.gift__card .logo__sym { color: var(--g-sym); transition: color .35s; }
 .gift__card .logo__sym { width: 30px; height: 30px; }
 .gift__card .logo__word { height: 13px; }
-.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: #DBC8A9; opacity: 1; }
-.gift__label { position: relative; letter-spacing: .3em; text-transform: uppercase; font-size: 11px; color: #5F5650; }
-.gift__amount { position: absolute; right: 34px; bottom: 30px; font-size: 44px; font-weight: 300; color: var(--dark); }
-.gift__copy p:not(.eyebrow) { color: var(--muted); font-weight: 300; font-size: 15px; margin: 16px 0 28px; max-width: 28em; }
+.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--g-wave); opacity: 1; transition: color .35s; }
+.gift__label { position: relative; letter-spacing: .3em; text-transform: uppercase; font-size: 11px; color: var(--g-label); }
+.gift__amount { position: absolute; right: 34px; bottom: 30px; font-size: 44px; font-weight: 300; color: var(--g-fg); }
+.gift__copy p:not(.eyebrow):not(.gift__label-row) { color: var(--muted); font-weight: 300; font-size: 15px; margin: 16px 0 28px; max-width: 28em; }
+.gift__label-row { margin: 0 0 12px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; }
+.gift__label-row span { color: var(--muted); letter-spacing: .08em; text-transform: none; font-weight: 300; margin-left: 6px; }
+.gift__designs { margin-bottom: 24px; }
+.gift__designs .swatch { width: 26px; height: 26px; }
 .gift__amounts { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
 .gift__amounts .chip[aria-checked="true"] { background: var(--dark); border-color: var(--dark); color: var(--on-dark); }
 
@@ -480,6 +492,7 @@ strong { font-weight: 500; }
 
 /* Gift amounts and button centred on phones */
 @media (max-width: 560px) {
-  .gift__amounts { justify-content: center; }
+  .gift__amounts, .gift__designs { justify-content: center; }
+  .gift__label-row { text-align: center; }
   .gift__copy [data-gift-add] { display: flex; margin-inline: auto; }
 }

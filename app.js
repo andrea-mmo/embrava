@@ -260,7 +260,12 @@ function updateBuilder() {
 
 /* ---------- gift card ---------- */
 let giftAmount = 50;
+let giftDesign = "sand";
 function renderGift() {
+  $("[data-gift-designs]").innerHTML = Object.entries(GIFT_DESIGNS).map(([k, d]) =>
+    `<button type="button" class="swatch" role="radio" style="--c:${d.hex}" data-gift-design="${k}" aria-checked="${k === giftDesign}" aria-label="${d.label}" title="${d.label}"></button>`).join("");
+  $("[data-gift-design-label]").textContent = GIFT_DESIGNS[giftDesign].label;
+  $("[data-gift-card]").dataset.design = giftDesign;
   $("[data-gift-options]").innerHTML = GIFT_AMOUNTS.map((a) =>
     `<button type="button" class="chip" role="radio" data-gift="${a}" aria-checked="${a === giftAmount}">${money(a)}</button>`).join("");
   $("[data-gift-amount]").textContent = money(giftAmount);
@@ -292,7 +297,8 @@ document.addEventListener("click", (e) => {
     picks.clear(); renderBuilder();
   }
   else if (d.gift) { giftAmount = Number(d.gift); renderGift(); }
-  else if ("giftAdd" in d) addToCart({ key: `gift-${giftAmount}`, name: "Gift card", meta: money(giftAmount), price: giftAmount, img: "assets/logo/favicon_180.png" });
+  else if (d.giftDesign) { giftDesign = d.giftDesign; renderGift(); }
+  else if ("giftAdd" in d) addToCart({ key: `gift-${giftDesign}-${giftAmount}`, name: "Gift card", meta: `${GIFT_DESIGNS[giftDesign].label} · ${money(giftAmount)}`, price: giftAmount, img: "assets/logo/favicon_180.png" });
   else if (d.qty) {
     const l = cart[Number(d.qty)]; l.qty += Number(d.d);
     if (l.qty <= 0) cart.splice(Number(d.qty), 1);

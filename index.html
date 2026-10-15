@@ -115,7 +115,7 @@
   <!-- GIFT CARD -->
   <section class="gift" id="gift">
     <div class="wrap gift__inner">
-      <div class="gift__card" aria-hidden="true">
+      <div class="gift__card" aria-hidden="true" data-gift-card data-design="sand">
         <svg class="gift__wave" viewBox="0 0 164 164" aria-hidden="true"><use href="#symbol"/></svg>
         <span class="logo" aria-hidden="true"><svg class="logo__sym" viewBox="0 0 164 164"><use href="#symbol"/></svg><svg class="logo__word" viewBox="0 0 7316 700"><use href="#wordmark"/></svg></span>
         <span class="gift__label">Gift card</span>
@@ -125,6 +125,9 @@
         <p class="eyebrow">Gift card</p>
         <h2>Give movement.</h2>
         <p>For anyone who trains at the gym, at home or anywhere in between. Delivered instantly by email.</p>
+        <p class="gift__label-row">Design <span data-gift-design-label>Sand</span></p>
+        <div class="swatches gift__designs" role="radiogroup" aria-label="Design" data-gift-designs></div>
+        <p class="gift__label-row">Amount</p>
         <div class="gift__amounts" role="radiogroup" aria-label="Amount" data-gift-options></div>
         <button class="btn btn--dark" type="button" data-gift-add>Add gift card</button>
       </div>

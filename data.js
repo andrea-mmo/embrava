@@ -6,6 +6,12 @@ const FREE_SHIPPING = 50;
 const BUILDER_MIN = 3;
 const BUILDER_DISCOUNT = 0.15;
 const GIFT_AMOUNTS = [25, 50, 100];
+const GIFT_DESIGNS = {
+  sand: { label: "Sand", hex: "#E8DAC3" },
+  terracotta: { label: "Terracotta", hex: "#C46848" },
+  dark: { label: "Dark", hex: "#2A2624" },
+  blush: { label: "Blush", hex: "#E9C9B6" },
+};
 
 const COLORS = {
   dark: { label: "Dark", hex: "#2A2624" },
