@@ -173,6 +173,7 @@ strong { font-weight: 500; }
 .kit__total strong { font-size: 22px; font-weight: 400; letter-spacing: .04em; }
 .kit__save { font-size: 12px; color: var(--terracotta); letter-spacing: .06em; white-space: nowrap; }
 .kit .btn { width: 100%; }
+.kit__items { display: none; margin: 0; font-size: 12px; font-weight: 300; color: var(--muted); line-height: 1.5; } /* phones only */
 
 .kits-band {
   margin-top: 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center;
@@ -550,4 +551,149 @@ strong { font-weight: 500; }
   .gift__amounts, .gift__designs { justify-content: center; }
   .gift__label-row { text-align: center; }
   .gift__copy [data-gift-add] { display: flex; margin-inline: auto; }
+}
+
+/* Shorter page on phones: two-up shop grid, kits as a swipeable row, tighter spacing */
+@media (max-width: 560px) {
+  .section { padding: 52px 0; }
+  .section--tight { padding: 36px 0; }
+  #kits { padding-bottom: 24px; }
+  .section__head { margin-bottom: 28px; }
+  .section__head--row { gap: 18px; }
+  .hero__media { aspect-ratio: 5 / 4; }
+  .hero__copy { padding: 28px 16px 40px; }
+
+  /* Kits: a short swipeable row, the next card peeking in */
+  .kits {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: -16px; padding: 0 16px 4px; scroll-padding-inline: 16px; scrollbar-width: none;
+  }
+  .kits::-webkit-scrollbar { display: none; }
+  .kit { flex: 0 0 62%; scroll-snap-align: start; }
+  .kit__pin, .kit__list, .kit__save { display: none; }
+  .kit__body { padding: 12px 12px 14px; gap: 6px; }
+  .kit__for { font-size: 9px; letter-spacing: .16em; }
+  .kit h3 { font-size: 13px; letter-spacing: .18em; }
+  .kit__items { display: block; font-size: 11px; }
+  .kit__total { padding-top: 8px; }
+  .kit__total strong { font-size: 17px; }
+  .kit__total s { font-size: 12px; }
+  .kit .btn { padding: 10px 12px; font-size: 10px; }
+  .kits-band { margin-top: 16px; padding: 20px 18px; }
+  .kits-band svg { width: 32px; height: 32px; }
+
+  /* Shop: two products per row */
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 28px 10px; }
+  .card__body { padding-top: 10px; gap: 6px; }
+  .card__top { flex-direction: column; gap: 2px; }
+  .card h3 { font-size: 11px; letter-spacing: .14em; line-height: 1.4; }
+  .card__price { font-size: 12px; }
+  .card__color { font-size: 11px; line-height: 1.4; }
+  .card__foot { flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+  .card .swatch { width: 18px; height: 18px; }
+  .card .swatches { gap: 6px; }
+  .card .card__tag { top: 8px; left: 8px; font-size: 9px; letter-spacing: .14em; padding: 4px 7px; }
+  .add-btn { padding: 7px 10px; font-size: 9px; letter-spacing: .18em; }
+
+  /* Builder: smaller slots, two picks per row */
+  .builder { gap: 20px; }
+  .slot { flex-basis: 112px; min-height: 160px; }
+  .slot--on img { margin-bottom: 6px; }
+  .slot__name { font-size: 10px; letter-spacing: .14em; }
+  .slot__meta { font-size: 11px; }
+  .tray__slots { margin-bottom: 18px; gap: 10px; }
+  .tray__bar { padding-top: 16px; }
+  .price-big { font-size: 28px; }
+  .builder__picks { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .pick { padding: 8px; }
+  .pick__main { gap: 8px; }
+  .pick__main img { width: 40px; height: 40px; }
+  .pick__name { font-size: 10px; letter-spacing: .12em; line-height: 1.35; }
+  .pick__price { font-size: 12px; }
+  .pick__check { width: 24px; height: 24px; }
+  .pick__check svg { width: 11px; }
+  .pick .swatches { margin: 8px 0 0; gap: 6px; }
+  .pick .swatch { width: 18px; height: 18px; }
+
+  /* Story and gift */
+  .story { padding: 56px 0; }
+  .story__inner { gap: 28px; }
+  .story__sym { width: 88px; }
+  .story h2 { margin-bottom: 20px; }
+  .story__copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+  .story__copy > p.story__tagline { margin-top: 24px; padding-top: 18px; }
+  .gift { padding: 56px 0; }
+  .gift__inner { gap: 32px; }
+  .gift__card { width: min(100%, 300px); justify-self: center; }
+  .gift__copy p:not(.eyebrow):not(.gift__label-row) { margin: 12px 0 22px; }
+  .gift__designs, .gift__amounts { margin-bottom: 18px; }
+
+  /* Promises: compact stacked rows */
+  .promises { gap: 0; }
+  .promises div { padding: 14px 0; }
+  .promises div:first-child { padding-top: 0; }
+
+  /* Footer: links in two columns */
+  .footer { padding: 48px 0 24px; }
+  .footer__inner { gap: 28px; }
+  .footer__brand .logo { margin-bottom: 12px; }
+  .footer__brand .eyebrow { margin: 0; }
+  .footer__links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+  .footer__legal { margin-top: 32px; }
+}
+
+/* "View all" for the shop: only shown on phones */
+.grid-more, .grid-more[hidden] { display: none; }
+
+/* Phones, second pass: fewer screens of scrolling */
+@media (max-width: 560px) {
+  .section { padding: 40px 0; }
+  .section__head { margin-bottom: 22px; }
+  .section__sub { margin-top: 8px; font-size: 13px; }
+  .eyebrow { margin-bottom: 10px; }
+
+  .hero__media { aspect-ratio: 16 / 10; }
+  .hero__copy { padding: 22px 16px 30px; }
+  .hero h1 { margin-bottom: 18px; }
+
+  /* Shop: first four pieces, then a button for the rest */
+  .grid.is-collapsed .card:nth-child(n+5) { display: none; }
+  .grid-more:not([hidden]) { display: flex; width: 100%; margin-top: 24px; }
+
+  /* Builder: pieces in a two-row strip you swipe sideways */
+  .builder__picks {
+    grid-template-columns: none; grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column; grid-auto-columns: 46%;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px;
+  }
+  .builder__picks::-webkit-scrollbar { display: none; }
+  .pick { scroll-snap-align: start; }
+  .slot { flex-basis: 100px; min-height: 140px; }
+  .tray { padding: 16px 14px; }
+
+  .story { padding: 44px 0; }
+  .story__sym { display: none; }
+
+  .gift { padding: 44px 0; }
+  .gift__inner { gap: 24px; }
+  .gift__card { width: min(100%, 250px); padding: 18px; }
+  .gift__card .logo__sym { width: 24px; height: 24px; }
+  .gift__card .logo__word { height: 10px; }
+  .gift__amount { font-size: 26px; right: 18px; bottom: 16px; }
+
+  /* Promises side by side */
+  .promises { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .promises div, .promises div:first-child { padding: 0 4px; border-top: 0; border-left: 1px solid var(--line); }
+  .promises div:first-child { border-left: 0; }
+  .promises strong { font-size: 10px; letter-spacing: .12em; line-height: 1.4; }
+  .promises span { font-size: 11px; line-height: 1.4; display: block; }
+
+  .footer { padding: 40px 0 20px; }
+  .footer__inner { gap: 24px; }
+  .footer__news-row { flex-direction: row; }
+  .footer__news input { padding: 11px 14px; }
+  .footer__news .btn { padding: 11px 16px; }
+  .footer__news-msg { margin-top: 6px; }
+  .footer__legal { margin-top: 24px; }
 }

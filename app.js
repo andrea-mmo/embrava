@@ -107,6 +107,7 @@ function renderKits() {
         <ul class="kit__list">
           ${pieces.map((p, i) => `<li><span>${k.items[i]}</span><span>${money(p.price)}</span></li>`).join("")}
         </ul>
+        <p class="kit__items">${k.items.join(" · ")}</p>
         <div class="kit__total">
           <span><s>${money(k.full)}</s><strong>${money(k.price)}</strong></span>
           <span class="kit__save">You save ${money(Math.round((k.full - k.price) * 100) / 100)}</span>
@@ -119,6 +120,7 @@ function renderKits() {
 
 /* ---------- catalogue ---------- */
 let activeCat = "all";
+let gridExpanded = false; // phones show the first four pieces until "View all"
 const selected = Object.fromEntries(PRODUCTS.map((p) => [p.id, firstColor(p)]));
 
 function renderFilters() {
@@ -135,6 +137,10 @@ function swatchesHtml(p, attr) {
 
 function renderGrid() {
   const items = PRODUCTS.filter((p) => activeCat === "all" || p.cat === activeCat);
+  const more = $("[data-grid-more]");
+  $("[data-grid]").classList.toggle("is-collapsed", !gridExpanded);
+  more.hidden = gridExpanded || items.length <= 4;
+  more.textContent = `View all ${items.length} pieces`;
   $("[data-grid]").innerHTML = items.map((p) => {
     const c = selected[p.id];
     return `
@@ -278,6 +284,7 @@ document.addEventListener("click", (e) => {
   const d = t.dataset;
 
   if (d.cat) { activeCat = d.cat; renderFilters(); renderGrid(); }
+  else if ("gridMore" in d) { gridExpanded = true; renderGrid(); }
   else if (d.swatch) setColor(d.swatch, d.color);
   else if (d.add) {
     const p = findProduct(d.add);
