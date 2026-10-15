@@ -660,15 +660,7 @@ strong { font-weight: 500; }
   .grid.is-collapsed .card:nth-child(n+5) { display: none; }
   .grid-more:not([hidden]) { display: flex; width: 100%; margin-top: 24px; }
 
-  /* Builder: pieces in a two-row strip you swipe sideways */
-  .builder__picks {
-    grid-template-columns: none; grid-template-rows: repeat(2, auto);
-    grid-auto-flow: column; grid-auto-columns: 46%;
-    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-    margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px;
-  }
-  .builder__picks::-webkit-scrollbar { display: none; }
-  .pick { scroll-snap-align: start; }
+  /* Builder: smaller tray */
   .slot { flex-basis: 100px; min-height: 140px; }
   .tray { padding: 16px 14px; }
 
