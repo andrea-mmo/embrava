@@ -2,7 +2,7 @@
    Launch prices, copy and details live here. Edit freely. */
 
 const CURRENCY = "£";
-const FREE_SHIPPING = 50;
+const FREE_SHIPPING = 40;
 const BUILDER_MIN = 3;
 const BUILDER_DISCOUNT = 0.15;
 const GIFT_AMOUNTS = [25, 50, 100];
