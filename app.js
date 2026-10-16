@@ -153,7 +153,7 @@ function renderGrid() {
         <div class="card__top"><h3><a href="${productUrl(p.id, c)}" data-product-link>${p.name}</a></h3><span class="card__price">${money(p.price)}</span></div>
         <span class="card__color" data-color-label>${COLORS[c].label}${Object.keys(p.variants).length > 1 ? ` · ${Object.keys(p.variants).length} colours` : ""}</span>
         <div class="card__foot">
-          ${swatchesHtml(p, "data-swatch")}
+          ${Object.keys(p.variants).length > 1 ? swatchesHtml(p, "data-swatch") : ""}
           <button class="add-btn" type="button" data-add="${p.id}">Add +</button>
         </div>
       </div>

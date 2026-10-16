@@ -224,6 +224,13 @@ strong { font-weight: 500; }
   outline-offset: 3px;
 }
 .swatch[aria-checked="true"] { outline: 1px solid var(--dark); }
+/* Touch: invisible ring widens the tap target without enlarging the dot */
+@media (pointer: coarse) {
+  .swatches { gap: 12px; }
+  .swatch { position: relative; }
+  .swatch::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; }
+}
+.card__foot .add-btn { margin-left: auto; }
 .add-btn {
   display: inline-flex; align-items: center; gap: 6px;
   background: transparent; color: var(--dark); border: 1px solid var(--dark);
@@ -594,6 +601,7 @@ strong { font-weight: 500; }
   .card__foot { flex-wrap: wrap; gap: 8px; padding-top: 4px; }
   .card .swatch { width: 18px; height: 18px; }
   .card .swatches { gap: 6px; }
+  @media (pointer: coarse) { .card .swatch { width: 20px; height: 20px; } .card .swatches { gap: 12px; } }
   .card .card__tag { top: 8px; left: 8px; font-size: 9px; letter-spacing: .14em; padding: 4px 7px; }
   .add-btn { padding: 7px 10px; font-size: 9px; letter-spacing: .18em; }
 
@@ -619,6 +627,7 @@ strong { font-weight: 500; }
   .pick__check svg { width: 11px; }
   .pick .swatches { margin: 8px 0 0; gap: 6px; }
   .pick .swatch { width: 18px; height: 18px; }
+  @media (pointer: coarse) { .pick .swatches { gap: 12px; } }
 
   /* Story and gift */
   .story { padding: 56px 0; }
