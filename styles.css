@@ -552,7 +552,7 @@ strong { font-weight: 500; }
   .hero h1, .section__head h2, .gift__copy h2, .story h2, .pdp__info h1 { font-size: 17px; letter-spacing: .2em; line-height: 1.45; }
   .story__copy > p.story__tagline { font-size: min(13px, 3.5vw); letter-spacing: .22em; white-space: nowrap; }
   .story__tagline span:last-child { margin-right: -.22em; }
-  .hero h1 { margin-bottom: 24px; }
+  .hero h1 { font-size: 21px; margin-bottom: 24px; }
 }
 
 /* Gift amounts and button centred on phones */
