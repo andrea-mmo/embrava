@@ -617,8 +617,8 @@ strong { font-weight: 500; }
   .pick__price { font-size: 12px; }
   .pick__check { width: 24px; height: 24px; }
   .pick__check svg { width: 11px; }
-  .pick .swatches { margin: 10px 0 2px; gap: 8px; }
-  .pick .swatch { width: 28px; height: 28px; } /* big enough to tap */
+  .pick .swatches { margin: 8px 0 0; gap: 6px; }
+  .pick .swatch { width: 18px; height: 18px; }
 
   /* Story and gift */
   .story { padding: 56px 0; }
