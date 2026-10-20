@@ -4,6 +4,7 @@
   --terracotta: #C46848;
   --terracotta-deep: #A9553A;
   --terracotta-soft: #D99A7E;
+  --sea: #2C5A73;
   --blush: #E9C9B6;
   --sand: #D9C4A2;
   --sand-soft: #E9DCC4;
@@ -49,6 +50,8 @@ strong { font-weight: 500; }
 .logo__sym { width: 28px; height: 28px; color: var(--terracotta); flex-shrink: 0; }
 .logo__word { height: 12px; width: auto; aspect-ratio: 7316 / 700; }
 .logo--neg { color: var(--on-dark); }
+/* on dark and terracotta the symbol keeps its colours and sits on a thin cream rim */
+.logo--neg .logo__sym, .kits-band svg, .story__sym, .story .eyebrow--wave svg { --sym-rim: var(--cream); overflow: visible; }
 .mono { width: 18px; height: 18px; color: var(--terracotta); }
 
 .eyebrow {
@@ -316,14 +319,14 @@ strong { font-weight: 500; }
 .gift__card {
   --g-bg: #E8DAC3; --g-fg: var(--dark); --g-wave: #DBC8A9; --g-label: #5F5650; --g-sym: var(--terracotta);
 }
-.gift__card[data-design="terracotta"] { --g-bg: var(--terracotta); --g-fg: var(--cream); --g-wave: #B95D3E; --g-label: #F2D9CB; --g-sym: var(--cream); }
-.gift__card[data-design="dark"] { --g-bg: var(--dark); --g-fg: var(--cream); --g-wave: #36302D; --g-label: var(--grey); --g-sym: var(--terracotta); }
+.gift__card[data-design="terracotta"] { --g-bg: var(--terracotta); --g-fg: var(--cream); --g-wave: #B95D3E; --g-label: #F2D9CB; --g-sym: var(--cream); --g-rim: var(--cream); }
+.gift__card[data-design="dark"] { --g-bg: var(--dark); --g-fg: var(--cream); --g-wave: #36302D; --g-label: var(--grey); --g-sym: var(--terracotta); --g-rim: var(--cream); }
 .gift__card[data-design="blush"] { --g-bg: var(--blush); --g-fg: var(--dark); --g-wave: #F3DDD0; --g-label: #8A5E4C; --g-sym: #fff; }
 .gift__card .logo { position: relative; color: var(--g-fg); transition: color .35s; }
-.gift__card .logo__sym { color: var(--g-sym); transition: color .35s; }
+.gift__card .logo__sym { --sym-rim: var(--g-rim, none); overflow: visible; }
 .gift__card .logo__sym { width: 30px; height: 30px; }
 .gift__card .logo__word { height: 13px; }
-.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--g-wave); opacity: 1; transition: color .35s; }
+.gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--g-wave); opacity: 1; transition: color .35s; --sym-sun: var(--g-wave); --sym-sea: var(--g-wave); }
 .gift__label { position: relative; letter-spacing: .3em; text-transform: uppercase; font-size: 11px; color: var(--g-label); }
 .gift__amount { position: absolute; right: 34px; bottom: 30px; font-size: 44px; font-weight: 300; color: var(--g-fg); }
 .gift__copy p:not(.eyebrow):not(.gift__label-row) { color: var(--muted); font-weight: 300; font-size: 15px; margin: 16px 0 28px; max-width: 28em; }
@@ -379,7 +382,7 @@ strong { font-weight: 500; }
 .cart__ship-bar span { display: block; height: 100%; background: var(--terracotta); transition: width .3s; }
 .cart__items { list-style: none; margin: 0; padding: 8px 24px; overflow-y: auto; flex: 1; }
 .cart__empty { padding: 48px 0; text-align: center; color: var(--muted); }
-.cart__empty svg { width: 48px; height: 48px; color: var(--blush); margin: 0 auto 16px; display: block; }
+.cart__empty svg { width: 48px; height: 48px; color: var(--blush); --sym-sun: currentColor; --sym-sea: currentColor; margin: 0 auto 16px; display: block; }
 .line { display: grid; grid-template-columns: 72px 1fr auto; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: center; }
 .line img { width: 72px; height: 72px; object-fit: cover; border-radius: 0; }
 .line__name { font-weight: 400; font-size: 15px; }
