@@ -266,7 +266,7 @@ function updateBuilder() {
 
 /* ---------- gift card ---------- */
 let giftAmount = 50;
-let giftDesign = "terracotta";
+let giftDesign = "sand";
 function renderGift() {
   $("[data-gift-designs]").innerHTML = Object.entries(GIFT_DESIGNS).map(([k, d]) =>
     `<button type="button" class="swatch" role="radio" style="--c:${d.hex}" data-gift-design="${k}" aria-checked="${k === giftDesign}" aria-label="${d.label}" title="${d.label}"></button>`).join("");

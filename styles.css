@@ -4,7 +4,7 @@
   --terracotta: #C46848;
   --terracotta-deep: #A9553A;
   --terracotta-soft: #D99A7E;
-  --sea: #2C5A73;
+  --espresso: #3A2A22;
   --sand: #D9C4A2;
   --sand-soft: #E9DCC4;
   --cream: #F4EEE3;
@@ -46,11 +46,9 @@ strong { font-weight: 500; }
 
 /* Brand: Sol y mar symbol + Jost Light wordmark (assets/logo) */
 .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--dark); }
-.logo__sym { width: 28px; height: 28px; color: var(--terracotta); --sym-sea: var(--sea); flex-shrink: 0; }
+.logo__sym { width: 28px; height: 28px; color: var(--terracotta); flex-shrink: 0; }
 .logo__word { height: 12px; width: auto; aspect-ratio: 7316 / 700; }
 .logo--neg { color: var(--on-dark); }
-/* full colour on light backgrounds; one cream ink on dark and terracotta */
-.logo--neg .logo__sym, .story .eyebrow--wave svg { color: var(--cream); --sym-sea: currentColor; }
 .mono { width: 18px; height: 18px; color: var(--terracotta); }
 
 .eyebrow {
@@ -62,7 +60,7 @@ strong { font-weight: 500; }
   color: var(--muted);
 }
 .eyebrow--wave { display: flex; align-items: center; gap: 10px; }
-.eyebrow--wave svg { width: 14px; height: 14px; color: var(--terracotta); --sym-sea: var(--sea); }
+.eyebrow--wave svg { width: 14px; height: 14px; color: var(--terracotta); }
 
 /* Buttons */
 .btn {
@@ -183,7 +181,7 @@ strong { font-weight: 500; }
   margin-top: 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center;
   background: var(--dark); color: var(--on-dark); padding: 30px 36px; text-decoration: none;
 }
-.kits-band svg { width: 44px; height: 44px; color: var(--cream); }
+.kits-band svg { width: 44px; height: 44px; color: var(--terracotta); }
 .kits-band__copy { font-size: 13px; font-weight: 300; color: rgba(244, 238, 227, .75); }
 .kits-band__copy strong {
   display: block; margin-bottom: 6px; color: var(--on-dark);
@@ -296,7 +294,7 @@ strong { font-weight: 500; }
 /* Our story: the brand idea, on dark */
 .story { background: var(--dark); color: var(--on-dark); padding: 112px 0; overflow: hidden; }
 .story__inner { display: grid; grid-template-columns: auto minmax(0, 520px); justify-content: center; gap: clamp(56px, 8vw, 120px); align-items: center; padding-inline: clamp(24px, 6vw, 88px); }
-.story__sym { width: clamp(180px, 22vw, 250px); aspect-ratio: 1; justify-self: center; color: var(--cream); }
+.story__sym { width: clamp(180px, 22vw, 250px); aspect-ratio: 1; justify-self: center; color: var(--terracotta); }
 .story .eyebrow { color: var(--grey); }
 .story h2 { font-size: clamp(22px, 2.3vw, 30px); font-weight: 400; letter-spacing: .28em; text-transform: uppercase; line-height: 1.35; margin: 0 0 28px; }
 .story__copy > p:not(.eyebrow) { font-size: 16px; font-weight: 300; line-height: 1.75; color: rgba(244, 238, 227, .8); margin: 0 0 18px; }
@@ -316,12 +314,11 @@ strong { font-weight: 500; }
   display: flex; flex-direction: column; justify-content: space-between;
 }
 .gift__card {
-  --g-bg: #E8DAC3; --g-fg: var(--dark); --g-wave: #DBC8A9; --g-label: #5F5650; --g-sym: var(--terracotta); --g-sea: var(--sea);
+  --g-bg: #E8DAC3; --g-fg: var(--dark); --g-wave: #DBC8A9; --g-label: #5F5650; --g-sym: var(--terracotta);
 }
-.gift__card[data-design="terracotta"] { --g-bg: var(--terracotta); --g-fg: var(--cream); --g-wave: #B95D3E; --g-label: #F2D9CB; --g-sym: var(--cream); --g-sea: currentColor; }
-.gift__card[data-design="dark"] { --g-bg: var(--dark); --g-fg: var(--cream); --g-wave: #36302D; --g-label: var(--grey); --g-sym: var(--cream); --g-sea: currentColor; }
+.gift__card[data-design="espresso"] { --g-bg: var(--espresso); --g-fg: var(--cream); --g-wave: #47352C; --g-label: #B9A898; }
 .gift__card .logo { position: relative; color: var(--g-fg); transition: color .35s; }
-.gift__card .logo__sym { color: var(--g-sym); --sym-sea: var(--g-sea, currentColor); transition: color .35s; }
+.gift__card .logo__sym { color: var(--g-sym); transition: color .35s; }
 .gift__card .logo__sym { width: 30px; height: 30px; }
 .gift__card .logo__word { height: 13px; }
 .gift__wave { position: absolute; width: 44%; height: auto; aspect-ratio: 1; right: -8%; bottom: -16%; color: var(--g-wave); opacity: 1; transition: color .35s; }
@@ -517,7 +514,7 @@ strong { font-weight: 500; }
 .accordion li::marker { color: var(--dark); }
 
 .pdp__missing { text-align: center; padding: 120px 0; }
-.pdp__missing svg { width: 64px; height: 64px; color: var(--terracotta); --sym-sea: var(--sea); margin: 0 auto 28px; display: block; }
+.pdp__missing svg { width: 64px; height: 64px; color: var(--terracotta); margin: 0 auto 28px; display: block; }
 .pdp__missing p { color: var(--muted); margin: 14px 0 28px; }
 
 .sticky-buy { display: none; }
