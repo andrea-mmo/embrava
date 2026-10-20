@@ -49,10 +49,10 @@
 .cs-mark--cream .logo__sym { width: 48px; height: 48px; }
 .cs-mark--cream .logo__word { height: 19px; }
 .cs-mark--terracotta { background: var(--terracotta); }
-.cs-sym { width: 44%; height: auto; --sym-rim: var(--cream); overflow: visible; }
+.cs-sym { width: 44%; height: auto; color: var(--cream); }
 .cs-mark--dark { background: #34302d; }
 .cs-vlock { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.cs-vlock__sym { width: 54px; height: 54px; --sym-rim: var(--cream); overflow: visible; }
+.cs-vlock__sym { width: 54px; height: 54px; color: var(--cream); }
 .cs-vlock__word { height: 11px; width: auto; aspect-ratio: 7316 / 700; color: var(--cream); }
 
 /* Before / after */
@@ -68,7 +68,7 @@
 .cs-list--light strong { color: var(--cream); }
 .cs-onproduct { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 24px; }
 .cs-onproduct img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0; }
-.cs-palette { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.cs-palette { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .cs-palette li { font-size: 14px; display: flex; flex-direction: column; gap: 2px; }
 .cs-palette span { height: 64px; border-radius: 0; background: var(--c); box-shadow: inset 0 0 0 1px rgba(244, 238, 227, .15); margin-bottom: 10px; }
 .cs-palette code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #999; }
