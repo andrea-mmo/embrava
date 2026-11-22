@@ -46,7 +46,7 @@
         <div><dt>Built for</dt><dd>Klaviyo, with plain HTML and CSS</dd></div>
         <div><dt>Year</dt><dd>2026</dd></div>
       </dl>
-      <p class="cs-disclaimer em-status"><strong>Status.</strong> Concept project. The emails are designed and coded as Klaviyo-ready HTML, but nothing has been sent, so this page shows no open rates or revenue. What it does show is the thinking: when each email fires, what it says and how success would be measured.</p>
+      <p class="cs-disclaimer em-status"><strong>Status.</strong> Concept project. The emails are designed and coded as HTML to paste into Klaviyo, but they have not been tested in a live Klaviyo account or in Gmail, Apple Mail and Outlook, and nothing has been sent, so this page shows no open rates or revenue. What it does show is the thinking: when each email fires, what it says and how success would be measured.</p>
     </div>
   </section>
 
@@ -109,7 +109,7 @@
         <article class="em-flow">
           <header>
             <h3>Launch campaign</h3>
-            <p><strong>Audience:</strong> engaged subscribers first, everyone else 48 hours later.</p>
+            <p><strong>Audience:</strong> engaged subscribers first (opened or clicked in the last 30 days), everyone else 48 hours later.</p>
           </header>
           <ol class="em-steps em-steps--one">
             <li><span class="em-time">Launch day</span><strong>L1 · The first collection</strong>Eleven pieces in three colours, then the three kits.</li>
@@ -134,7 +134,7 @@
       <div class="cs-decisions">
         <article>
           <h3>A gift that is not a discount</h3>
-          <p>The welcome offer is free delivery, not a percentage off. A code would stack on top of the 20% kit saving and weaken the idea that a kit is always the best deal.</p>
+          <p>The welcome offer is free delivery, not a percentage off. It is a thank-you for joining, so it applies to a first order of any size, even though delivery is normally free from £40. A percentage code would stack on top of the 20% kit saving and weaken the idea that a kit is always the best deal.</p>
         </article>
         <article>
           <h3>Kits in every flow</h3>
@@ -177,7 +177,7 @@
       <h3 class="em-group">Welcome flow</h3>
       <div class="em-mails">
         <figure class="em-mail">
-          <div class="em-frame" data-h="1580"><iframe src="emails/welcome-1.html" title="Welcome email 1" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <div class="em-frame" data-h="1606"><iframe src="emails/welcome-1.html" title="Welcome email 1" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
           <figcaption>
             <strong>W1 · Welcome</strong>
             <dl><dt>Subject</dt><dd>Welcome to Embrava</dd><dt>Preview</dt><dd>Free UK delivery on your first order, no minimum.</dd><dt>Sent</dt><dd>Straight after sign-up</dd></dl>
@@ -228,7 +228,7 @@
           <div class="em-frame" data-h="1660"><iframe src="emails/launch.html" title="Launch email" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
           <figcaption>
             <strong>L1 · The first collection</strong>
-            <dl><dt>Subject A</dt><dd>The first Embrava collection is here</dd><dt>Subject B</dt><dd>Espresso, Sand, Cream. Now open.</dd><dt>Preview</dt><dd>Espresso, Sand, Cream. Three kits, one range.</dd><dt>Sent</dt><dd>Launch day, engaged subscribers first</dd></dl>
+            <dl><dt>Subject A</dt><dd>The first Embrava collection is here</dd><dt>Subject B</dt><dd>Espresso, Sand, Cream. Now open.</dd><dt>Preview</dt><dd>Espresso, Sand, Cream. Three kits, one range.</dd><dt>Sent</dt><dd>Launch day, engaged subscribers first (opened or clicked in the last 30 days)</dd></dl>
             <a href="emails/launch.html" target="_blank" rel="noopener">Open full size</a>
           </figcaption>
         </figure>
@@ -244,7 +244,7 @@
         <h2>Built to run in Klaviyo</h2>
       </div>
       <div class="cs-split__body">
-        <p>Every email exists twice. The preview version uses sample data so it renders anywhere. The Klaviyo version, in <code>emails/klaviyo/</code>, swaps in merge tags and absolute image links, ready to paste into a custom HTML template.</p>
+        <p>Every email exists twice. The preview version uses sample data so it opens in any browser. The Klaviyo version, in <code>emails/klaviyo/</code>, swaps in merge tags and absolute image links, ready to paste into a custom HTML template.</p>
         <div class="cs-tech">
           <div><h3>Triggers</h3><p>Welcome: added to the newsletter list. Cart: the “Checkout Started” metric from the store, with a flow filter that removes anyone who has placed an order since.</p></div>
           <div><h3>Merge tags</h3><p>First name with a fallback, the checkout link, the unsubscribe link and the sender address. Not yet run against a live account, so the first test send comes before anything else.</p></div>

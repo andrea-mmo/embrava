@@ -181,7 +181,7 @@ EMAILS["welcome-1"] = dict(
     block(
         f'<p style="margin:0 0 8px;font-family:{FONT};font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:{MUTED}">Your welcome gift</p>'
         f'<p style="margin:0 0 8px;font-family:{FONT};font-size:22px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:{DARK}">Free UK delivery</p>'
-        + p("On your first order, with no minimum spend. Use the code at checkout within 14 days.", 15, DARK, 14) +
+        + p("On your first order, with no minimum spend, as a thank you for joining. Delivery is normally free from £40. Use the code at checkout within 14 days.", 15, DARK, 14) +
         f'<p style="margin:0;font-family:{FONT};font-size:18px;letter-spacing:.3em;color:{ESPRESSO}"><strong style="font-weight:500">WELCOME</strong></p>',
         bg=SAND, pad="34px 40px") +
     block(swatches(), pad="36px 40px 44px"),
