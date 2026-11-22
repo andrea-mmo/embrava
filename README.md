@@ -27,6 +27,8 @@ Plain HTML, CSS and JavaScript. No framework, no build step.
 | `index.html` | Homepage: hero, kits, shop, build your kit, our story, gift card |
 | `product.html` | Product page template (`product.html?p=bottle&colour=sand`) |
 | `case-study.html` | Design case study |
+| `email-case-study.html` | Email marketing case study (welcome, abandoned cart, launch) |
+| `emails/` | The six emails; `python3 build.py` regenerates them, `--klaviyo` writes the Klaviyo versions |
 | `data.js` | Catalogue: products, prices, kits and copy |
 | `app.js` | Shared helpers, basket and homepage logic |
 | `product.js` | Product page logic |

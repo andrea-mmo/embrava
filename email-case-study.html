@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embrava · Email case study</title>
+<meta name="description" content="Case study: designing a welcome flow, an abandoned cart flow and a launch email for Embrava, built to run in Klaviyo.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_32.png">
+<link rel="apple-touch-icon" href="assets/logo/favicon_180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="email-case.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs><clipPath id="sym-clip"><circle cx="100" cy="100" r="82"/></clipPath></defs>
+<symbol id="symbol" viewBox="0 0 164 164"><g transform="translate(-18 -18)" clip-path="url(#sym-clip)" fill="currentColor"><path d="M0,0H200V121.5C170,121.5 160,139 134,139C104,139 94,107 66,107C40,107 30,127.5 0,127.5Z"/><path d="M0,200V141C30,141 40,120.5 66,120.5C94,120.5 104,152.5 134,152.5C160,152.5 170,135 200,135V200Z"/></g></symbol>
+<symbol id="wordmark" viewBox="0 0 7316 700"><path fill="currentColor" transform="translate(0 700)" d="M112.9991455078125 0.0H459.998779296875V-51.998291015625H112.9991455078125ZM112.9991455078125 -648.001708984375H459.998779296875V-700.0H112.9991455078125ZM112.9991455078125 -357.60107421875H439.998779296875V-409.599365234375H112.9991455078125ZM84.000244140625 -700.0V0.0H139.3984375V-700.0Z M1196.9991455078125 -553.804931640625 1443.000244140625 -81.0009765625 1689.0013427734375 -553.804931640625 1748.601806640625 0.0H1804.0L1723.000244140625 -726.99951171875L1443.000244140625 -189.1976318359375L1163.000244140625 -726.99951171875L1082.00048828125 0.0H1137.398681640625Z M2478.998779296875 -376.400390625H2591.998779296875Q2650.99853515625 -376.400390625 2695.8984375 -393.600341796875Q2740.79833984375 -410.80029296875 2766.3983154296875 -445.4002685546875Q2791.998291015625 -480.000244140625 2791.998291015625 -531.0003662109375Q2791.998291015625 -587.0001220703125 2766.9983520507812 -624.300048828125Q2741.9984130859375 -661.5999755859375 2696.4984741210938 -680.7999877929688Q2650.99853515625 -700.0 2587.99853515625 -700.0H2436.000244140625V0.0H2597.99853515625Q2665.99853515625 0.0 2718.2984619140625 -21.89996337890625Q2770.598388671875 -43.7999267578125 2800.6983032226562 -88.89990234375Q2830.7982177734375 -133.9998779296875 2830.7982177734375 -202.9998779296875Q2830.7982177734375 -250.9998779296875 2811.59814453125 -286.39990234375Q2792.3980712890625 -321.7999267578125 2759.498046875 -344.89996337890625Q2726.5980224609375 -368.0 2685.9981689453125 -379.4000244140625Q2645.3983154296875 -390.800048828125 2601.998779296875 -390.800048828125H2478.998779296875V-359.4010009765625H2597.99853515625Q2633.5986328125 -359.4010009765625 2665.3988647460938 -349.3009033203125Q2697.1990966796875 -339.2008056640625 2722.099365234375 -319.60064697265625Q2746.9996337890625 -300.00048828125 2761.1998291015625 -271.4002685546875Q2775.4000244140625 -242.800048828125 2775.4000244140625 -205.999755859375Q2775.4000244140625 -154.19921875 2753.099853515625 -119.39892578125Q2730.7996826171875 -84.5986328125 2690.8993530273438 -66.99853515625Q2650.9990234375 -49.3984375 2597.99853515625 -49.3984375H2490.9984130859375V-650.6015625H2587.99853515625Q2655.7994384765625 -650.6015625 2696.1997680664062 -618.5012817382812Q2736.60009765625 -586.4010009765625 2736.60009765625 -528.00048828125Q2736.60009765625 -487.0 2716.599853515625 -460.3997802734375Q2696.599609375 -433.799560546875 2662.7992553710938 -420.79949951171875Q2628.9989013671875 -407.7994384765625 2587.99853515625 -407.7994384765625H2478.998779296875Z M3587.599853515625 -333.79931640625 3819.599365234375 0.0H3888.1971435546875L3649.3978271484375 -333.79931640625ZM3469.000244140625 -700.0V0.0H3524.3984375V-700.0ZM3497.9991455078125 -650.6015625H3628.9984130859375Q3682.39892578125 -650.6015625 3723.29931640625 -633.00146484375Q3764.19970703125 -615.4013671875 3787.4999389648438 -581.401123046875Q3810.8001708984375 -547.40087890625 3810.8001708984375 -496.8004150390625Q3810.8001708984375 -446.5999755859375 3787.699951171875 -412.19970703125Q3764.5997314453125 -377.7994384765625 3723.4993286132812 -360.1993408203125Q3682.39892578125 -342.5992431640625 3628.9984130859375 -342.5992431640625H3497.9991455078125V-293.600830078125H3628.9984130859375Q3696.9984130859375 -293.600830078125 3750.2984008789062 -317.500732421875Q3803.598388671875 -341.400634765625 3834.8983764648438 -387.10052490234375Q3866.1983642578125 -432.8004150390625 3866.1983642578125 -496.8004150390625Q3866.1983642578125 -561.8004150390625 3834.8983764648438 -607.0003051757812Q3803.598388671875 -652.2001953125 3750.2984008789062 -676.10009765625Q3696.9984130859375 -700.0 3628.9984130859375 -700.0H3497.9991455078125Z M4547.799560546875 -234.801513671875H4906.9989013671875L4888.9996337890625 -286.7998046875H4565.798828125ZM4725.999267578125 -600.403564453125 4864.0003662109375 -266.400390625 4869.2001953125 -253.2008056640625 4973.2003173828125 0.0H5034.998291015625L4725.999267578125 -726.99951171875L4417.000244140625 0.0H4478.7982177734375L4584.3983154296875 -256.8006591796875L4589.59814453125 -269.2003173828125Z M5861.999267578125 -100.7965087890625 5615.1982421875 -700.0H5553.000244140625L5861.999267578125 26.99951171875L6170.998291015625 -700.0H6108.80029296875Z M6819.799560546875 -234.801513671875H7178.9989013671875L7160.9996337890625 -286.7998046875H6837.798828125ZM6997.999267578125 -600.403564453125 7136.0003662109375 -266.400390625 7141.2001953125 -253.2008056640625 7245.2003173828125 0.0H7306.998291015625L6997.999267578125 -726.99951171875L6689.000244140625 0.0H6750.7982177734375L6856.3983154296875 -256.8006591796875L6861.59814453125 -269.2003173828125Z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a href="index.html" class="header__logo" aria-label="Embrava store">
+      <span class="logo" aria-hidden="true"><svg class="logo__sym" viewBox="0 0 164 164"><use href="#symbol"/></svg><svg class="logo__word" viewBox="0 0 7316 700"><use href="#wordmark"/></svg></span>
+    </a>
+    <span class="cs-header__label">Email case study</span>
+    <a href="case-study.html" class="btn btn--dark cs-header__cta">Store case study</a>
+  </div>
+</header>
+
+<main class="cs">
+
+  <!-- INTRO -->
+  <section class="cs-intro">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--wave"><svg viewBox="0 0 164 164" aria-hidden="true"><use href="#symbol"/></svg>Case study · Email marketing</p>
+      <h1>Giving the store<br>something to say.</h1>
+      <p class="cs-intro__lead">The Embrava store could sell, but it could not talk back. This case adds the missing half: a welcome flow that turns sign-ups into first orders, an abandoned cart flow that turns a basket into a kit, and a launch email. Six emails, designed and coded to run in Klaviyo.</p>
+      <dl class="cs-meta">
+        <div><dt>Designed and built by</dt><dd><a href="https://github.com/andrea-mmo">Andrea Martinez Moreno</a></dd></div>
+        <div><dt>Role</dt><dd>Email strategy, flow design, copywriting, HTML email</dd></div>
+        <div><dt>Scope</dt><dd>3 flows, 6 emails</dd></div>
+        <div><dt>Built for</dt><dd>Klaviyo, with plain HTML and CSS</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+      </dl>
+      <p class="cs-disclaimer em-status"><strong>Status.</strong> Concept project. The emails are designed and coded as Klaviyo-ready HTML, but nothing has been sent, so this page shows no open rates or revenue. What it does show is the thinking: when each email fires, what it says and how success would be measured.</p>
+    </div>
+  </section>
+
+  <!-- BRIEF -->
+  <section class="cs-section">
+    <div class="wrap cs-split">
+      <div class="cs-split__head">
+        <span class="cs-num">01</span>
+        <h2>The brief</h2>
+      </div>
+      <div class="cs-split__body">
+        <p>The <a class="em-link" href="case-study.html">store</a> already did the hard part of retail: a colour-first catalogue, kits that are always the best deal, a free delivery nudge at £40. But once someone left the page, Embrava had no way to bring them back.</p>
+        <ul class="cs-list">
+          <li><strong>Turn sign-ups into first orders.</strong> The footer form collects emails. Nothing happens next.</li>
+          <li><strong>Win back abandoned baskets.</strong> Someone who added a gym bag was close. One message should close the gap.</li>
+          <li><strong>Launch with a proper send.</strong> The first collection deserves more than a post on social media.</li>
+        </ul>
+        <p>One rule from the store carries over: <strong>emails should push people towards kits</strong>, because the kit logic is what raises the average order.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOWS -->
+  <section class="cs-section cs-section--sand">
+    <div class="wrap">
+      <div class="cs-split cs-split--tight">
+        <div class="cs-split__head">
+          <span class="cs-num">02</span>
+          <h2>Three flows,<br>six emails</h2>
+        </div>
+        <div class="cs-split__body">
+          <p>Two automated flows run all year. The launch email is a one-off campaign.</p>
+        </div>
+      </div>
+
+      <div class="em-flows">
+        <article class="em-flow">
+          <header>
+            <h3>Welcome flow</h3>
+            <p><strong>Trigger:</strong> subscribes through the footer form. <strong>Exits:</strong> places an order.</p>
+          </header>
+          <ol class="em-steps">
+            <li><span class="em-time">Straight away</span><strong>W1 · Welcome</strong>Who we are, plus the welcome gift: free UK delivery on a first order.</li>
+            <li><span class="em-time">Day 2</span><strong>W2 · Where do you train?</strong>The three kits, each 20% below the price of the pieces.</li>
+            <li><span class="em-time">Day 5</span><strong>W3 · Build your own</strong>Any three pieces for 15% off, with a worked example.</li>
+          </ol>
+        </article>
+
+        <article class="em-flow">
+          <header>
+            <h3>Abandoned cart flow</h3>
+            <p><strong>Trigger:</strong> starts checkout, no order. <strong>Exits:</strong> places an order.</p>
+          </header>
+          <ol class="em-steps em-steps--two">
+            <li><span class="em-time">After 1 hour</span><strong>C1 · Your basket</strong>A plain reminder with the item, the price and one button.</li>
+            <li><span class="em-time">After 24 hours</span><strong>C2 · Make it a kit</strong>Turns the basket into the matching kit and shows the saving. Then the flow stops.</li>
+          </ol>
+        </article>
+
+        <article class="em-flow">
+          <header>
+            <h3>Launch campaign</h3>
+            <p><strong>Audience:</strong> engaged subscribers first, everyone else 48 hours later.</p>
+          </header>
+          <ol class="em-steps em-steps--one">
+            <li><span class="em-time">Launch day</span><strong>L1 · The first collection</strong>Eleven pieces in three colours, then the three kits.</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISIONS -->
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-split cs-split--tight">
+        <div class="cs-split__head">
+          <span class="cs-num">03</span>
+          <h2>Key decisions</h2>
+        </div>
+        <div class="cs-split__body">
+          <p>Each choice protects something the store already does well.</p>
+        </div>
+      </div>
+      <div class="cs-decisions">
+        <article>
+          <h3>A gift that is not a discount</h3>
+          <p>The welcome offer is free delivery, not a percentage off. A code would stack on top of the 20% kit saving and weaken the idea that a kit is always the best deal.</p>
+        </article>
+        <article>
+          <h3>Kits in every flow</h3>
+          <p>W2 shows the kits, W3 the builder, C2 the kit that matches your basket. Every message nudges the same way as the store: more pieces, better price.</p>
+        </article>
+        <article>
+          <h3>Two reminders, then silence</h3>
+          <p>A new brand should not chase. The cart flow sends two emails in 24 hours and stops, and the second one adds a reason to come back rather than repeating the first.</p>
+        </article>
+        <article>
+          <h3>No false urgency</h3>
+          <p>No countdown timers and no “only 2 left”. Every claim in the emails is something the store really does: the 20%, the 15%, the £40.</p>
+        </article>
+        <article>
+          <h3>One job per email</h3>
+          <p>Each email has one button and one idea. They are short enough to read on a phone in the time it takes to queue for a coffee.</p>
+        </article>
+        <article>
+          <h3>The brand rules still apply</h3>
+          <p>Cream page, espresso buttons, square corners, spaced capitals. Terracotta appears only inside the logo, exactly as it does on the store and on the products.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAILS -->
+  <section class="cs-section cs-section--paper" id="emails">
+    <div class="wrap">
+      <div class="cs-split cs-split--tight">
+        <div class="cs-split__head">
+          <span class="cs-num">04</span>
+          <h2>The emails</h2>
+          <p class="cs-hint">Live previews. Open any email full size to see it as a subscriber would.</p>
+        </div>
+        <div class="cs-split__body">
+          <p>Built as 600px table layouts with inline styles, the way email clients expect. Text stays live, images carry alt text, and on a phone the columns stack and the images fill the width.</p>
+        </div>
+      </div>
+
+      <h3 class="em-group">Welcome flow</h3>
+      <div class="em-mails">
+        <figure class="em-mail">
+          <div class="em-frame" data-h="1580"><iframe src="emails/welcome-1.html" title="Welcome email 1" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>W1 · Welcome</strong>
+            <dl><dt>Subject</dt><dd>Welcome to Embrava</dd><dt>Preview</dt><dd>Free UK delivery on your first order, no minimum.</dd><dt>Sent</dt><dd>Straight after sign-up</dd></dl>
+            <a href="emails/welcome-1.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+        <figure class="em-mail">
+          <div class="em-frame" data-h="1465"><iframe src="emails/welcome-2.html" title="Welcome email 2" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>W2 · Where do you train?</strong>
+            <dl><dt>Subject</dt><dd>Where do you train?</dd><dt>Preview</dt><dd>Three kits, and each one saves 20%.</dd><dt>Sent</dt><dd>Day 2</dd></dl>
+            <a href="emails/welcome-2.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+        <figure class="em-mail">
+          <div class="em-frame" data-h="1165"><iframe src="emails/welcome-3.html" title="Welcome email 3" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>W3 · Build your own</strong>
+            <dl><dt>Subject</dt><dd>Build your own kit</dd><dt>Preview</dt><dd>Any three pieces, in any colours, for 15% less.</dd><dt>Sent</dt><dd>Day 5</dd></dl>
+            <a href="emails/welcome-3.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3 class="em-group">Abandoned cart flow</h3>
+      <div class="em-mails em-mails--two">
+        <figure class="em-mail">
+          <div class="em-frame" data-h="930"><iframe src="emails/cart-1.html" title="Abandoned cart email 1" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>C1 · Your basket</strong>
+            <dl><dt>Subject</dt><dd>Still thinking it over?</dd><dt>Preview</dt><dd>Your Gym bag is waiting in your basket.</dd><dt>Sent</dt><dd>1 hour after checkout starts</dd></dl>
+            <a href="emails/cart-1.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+        <figure class="em-mail">
+          <div class="em-frame" data-h="1405"><iframe src="emails/cart-2.html" title="Abandoned cart email 2" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>C2 · Make it a kit</strong>
+            <dl><dt>Subject</dt><dd>Make it a kit and save £11</dd><dt>Preview</dt><dd>The Gym kit is £44 for three pieces, with free delivery.</dd><dt>Sent</dt><dd>24 hours after checkout starts</dd></dl>
+            <a href="emails/cart-2.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3 class="em-group">Launch campaign</h3>
+      <div class="em-mails em-mails--one">
+        <figure class="em-mail">
+          <div class="em-frame" data-h="1660"><iframe src="emails/launch.html" title="Launch email" loading="lazy" tabindex="-1" scrolling="no"></iframe></div>
+          <figcaption>
+            <strong>L1 · The first collection</strong>
+            <dl><dt>Subject A</dt><dd>The first Embrava collection is here</dd><dt>Subject B</dt><dd>Espresso, Sand, Cream. Now open.</dd><dt>Preview</dt><dd>Espresso, Sand, Cream. Three kits, one range.</dd><dt>Sent</dt><dd>Launch day, engaged subscribers first</dd></dl>
+            <a href="emails/launch.html" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- KLAVIYO -->
+  <section class="cs-section cs-section--dark">
+    <div class="wrap cs-split">
+      <div class="cs-split__head">
+        <span class="cs-num">05</span>
+        <h2>Built to run in Klaviyo</h2>
+      </div>
+      <div class="cs-split__body">
+        <p>Every email exists twice. The preview version uses sample data so it renders anywhere. The Klaviyo version, in <code>emails/klaviyo/</code>, swaps in merge tags and absolute image links, ready to paste into a custom HTML template.</p>
+        <div class="cs-tech">
+          <div><h3>Triggers</h3><p>Welcome: added to the newsletter list. Cart: the “Checkout Started” metric from the store, with a flow filter that removes anyone who has placed an order since.</p></div>
+          <div><h3>Merge tags</h3><p>First name with a fallback, the checkout link, the unsubscribe link and the sender address. Not yet run against a live account, so the first test send comes before anything else.</p></div>
+          <div><h3>Personalisation next</h3><p>A “where do you train?” answer collected at sign-up would let W2 show only the matching kit through a conditional split.</p></div>
+          <div><h3>One file per email</h3><p>A short Python script, <code>emails/build.py</code>, generates all six from shared components, so a colour or footer change happens once.</p></div>
+          <div><h3>Email-safe by default</h3><p>Table layout, inline styles, a hidden preview text, alt text on every image, and a light-only colour scheme so the cream and espresso are never inverted.</p></div>
+          <div><h3>Compliance</h3><p>Every email carries an unsubscribe link and a sender address. The sign-up form needs clear consent wording before any real list is collected.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEASURING -->
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-split cs-split--tight">
+        <div class="cs-split__head">
+          <span class="cs-num">06</span>
+          <h2>How I would measure it</h2>
+        </div>
+        <div class="cs-split__body">
+          <p>Opens are unreliable now that Apple Mail pre-loads images, so each flow is judged on clicks and orders, with opens as a rough guide only.</p>
+        </div>
+      </div>
+      <div class="em-table-wrap">
+        <table class="em-table">
+          <thead><tr><th>Flow</th><th>Main metric</th><th>Also watch</th><th>First test</th></tr></thead>
+          <tbody>
+            <tr><td>Welcome</td><td>Placed order rate within 14 days</td><td>Click rate on W1, unsubscribes after W3</td><td>Free delivery against a percentage off in W1</td></tr>
+            <tr><td>Abandoned cart</td><td>Recovered revenue per recipient</td><td>Share of orders that became a kit</td><td>C1 at 1 hour against 4 hours</td></tr>
+            <tr><td>Launch</td><td>Revenue per recipient</td><td>Click rate by subject line, spam complaints</td><td>Subject A against subject B</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cs-note em-note">The cart flow has one extra number worth checking: how many recovered orders were kits. If C2 only brings back the same single bag, the kit nudge is not working.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="cs-section cs-section--sand">
+    <div class="wrap cs-split">
+      <div class="cs-split__head">
+        <span class="cs-num">07</span>
+        <h2>What's next</h2>
+      </div>
+      <div class="cs-split__body">
+        <ul class="cs-list">
+          <li><strong>Build it in Klaviyo.</strong> Import the HTML, set up the three flows, and send test emails to check the merge tags and the way they look in Gmail, Apple Mail and Outlook.</li>
+          <li><strong>Connect the store.</strong> Today the footer form is a front-end demo. It needs a real sign-up form, and the cart emails need a store that reports “Checkout Started”, which comes with the move to Shopify.</li>
+          <li><strong>Add a post-purchase flow.</strong> A thank you, care and delivery information, and a gentle invitation to complete the set.</li>
+        </ul>
+        <p class="cs-disclaimer">This is a concept project. Product images are mockups, prices are illustrative and no email has been sent to a real list.</p>
+        <a href="case-study.html" class="btn btn--dark">Read the store case study</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer cs-footer">
+  <div class="wrap cs-footer__inner">
+    <span class="logo logo--neg" role="img" aria-label="Embrava"><svg class="logo__sym" viewBox="0 0 164 164"><use href="#symbol"/></svg><svg class="logo__word" viewBox="0 0 7316 700"><use href="#wordmark"/></svg></span>
+    <p class="cs-credit">Case study by <a href="https://github.com/andrea-mmo">Andrea Martinez Moreno</a></p>
+  </div>
+</footer>
+
+<script>
+/* Scale each email preview (rendered 680px wide) to the width of its frame */
+(function () {
+  var frames = document.querySelectorAll('.em-frame');
+  function fit() {
+    frames.forEach(function (f) {
+      var w = f.clientWidth, s = w / 680, h = +f.dataset.h;
+      var ifr = f.firstElementChild;
+      ifr.style.transform = 'scale(' + s + ')';
+      ifr.style.height = h + 'px';
+      f.style.height = Math.round(h * s) + 'px';
+    });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+})();
+</script>
+</body>
+</html>

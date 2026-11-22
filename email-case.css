@@ -1,0 +1,61 @@
+/* embrava · email case study (extends styles.css and case.css) */
+
+.em-status { max-width: 46em; margin: 0 !important; }
+.em-link { border-bottom: 2px solid currentColor; text-decoration: none; }
+.cs-section--dark code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; color: var(--sand); }
+
+/* Flow maps */
+.em-flows { display: grid; gap: 18px; }
+.em-flow { background: var(--surface); padding: 28px 30px 32px; }
+.em-flow header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 32px; flex-wrap: wrap; margin-bottom: 24px; }
+.em-flow h3 { font-size: 13px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; margin: 0; }
+.em-flow header p { margin: 0; font-size: 14px; color: var(--muted); }
+.em-flow header strong { font-weight: 500; color: var(--dark); }
+
+.em-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: none; }
+.em-steps--two { grid-template-columns: repeat(2, 1fr); }
+.em-steps--one { grid-template-columns: minmax(0, 1fr); }
+.em-steps li { position: relative; padding: 22px 24px 0 0; border-top: 2px solid var(--dark); font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.55; }
+.em-steps li + li { padding-left: 24px; border-left: 0; }
+.em-steps li::before { content: ""; position: absolute; top: -6px; left: 0; width: 10px; height: 10px; background: var(--dark); border-radius: 50%; }
+.em-steps li + li::before { left: 24px; }
+.em-steps strong { display: block; font-weight: 400; color: var(--dark); font-size: 15px; letter-spacing: .06em; margin: 4px 0 6px; }
+.em-time { display: block; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+/* Email previews */
+.em-group { font-size: 13px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; margin: 56px 0 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.em-group:first-of-type { margin-top: 8px; }
+.em-mails { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.em-mails--two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
+.em-mails--one { grid-template-columns: minmax(0, 1fr); max-width: 400px; }
+.em-mail { margin: 0; }
+.em-frame { position: relative; overflow: hidden; background: #E9E1D2; border: 1px solid var(--line); box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .35); }
+.em-frame iframe { position: absolute; top: 0; left: 0; width: 680px; border: 0; transform-origin: 0 0; background: #E9E1D2; pointer-events: none; }
+.em-mail figcaption { padding-top: 18px; font-size: 14px; }
+.em-mail figcaption > strong { display: block; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; font-size: 13px; margin-bottom: 10px; }
+.em-mail dl { margin: 0 0 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
+.em-mail dt { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+.em-mail dd { margin: 0; color: var(--dark); font-weight: 300; }
+.em-mail figcaption a { color: var(--dark); border-bottom: 2px solid currentColor; text-decoration: none; font-size: 14px; }
+
+/* Measuring table */
+.em-table-wrap { overflow-x: auto; }
+.em-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+.em-table th { text-align: left; font-size: 12px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 0 20px 14px 0; border-bottom: 2px solid var(--dark); }
+.em-table td { padding: 18px 20px 18px 0; border-bottom: 1px solid var(--line); vertical-align: top; font-weight: 300; }
+.em-table td:first-child { font-weight: 400; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; white-space: nowrap; }
+.em-note { margin-top: 28px !important; max-width: 46em; }
+
+@media (max-width: 1080px) {
+  .em-mails { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .em-steps, .em-steps--two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .em-steps li + li { padding-left: 0; }
+  .em-steps li + li::before { left: 0; }
+  .em-flow { padding: 24px 22px 28px; }
+}
+@media (max-width: 560px) {
+  .em-mails, .em-mails--two { grid-template-columns: minmax(0, 1fr); }
+  .em-mails--one { max-width: none; }
+}
