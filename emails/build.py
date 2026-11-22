@@ -265,7 +265,7 @@ EMAILS["cart-2"] = dict(
 # L1 · Launch campaign
 EMAILS["launch"] = dict(
     subject="The first Embrava collection is here",
-    preheader="Espresso, Sand, Cream. Three kits, one range.",
+    preheader="Eleven pieces, three kits and free UK delivery from £40.",
     rows=hero("bag_sand.jpg", "Embrava gym bag in sand") + block(
         eyebrow("The first collection") + h1("Espresso.<br>Sand. Cream.") +
         p("Eleven pieces, three colours, made to go together. For the week you actually have: weights, mat work, "
